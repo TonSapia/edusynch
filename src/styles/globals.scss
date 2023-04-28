@@ -1,0 +1,80 @@
+@import '_variables';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  color: $text-color;
+}  
+
+h1 {  
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: -1px;  
+} 
+
+h2 {  
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: -1px;
+}  
+
+h3 {  
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: 0;
+}
+
+h4 {  
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0;
+}
+
+h5 {
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+p {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+label {
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0;
+}
+
+.small-label {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0;
+}
+
+/* Mobile */
+@media (max-width: 320px) {
+
+}
+
+/* Mobile and Tablet */
+@media (min-width: 321px) and (max-width: 768px) {
+
+}
+
+/* Tablet and Desktop */
+@media (min-width: 769px) and (max-width: 1440px) {
+
+}
