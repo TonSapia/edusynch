@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Wilton Sapia",
+      "img": "logo.png"
+    },
+    {
+      "id": 2,
+      "name": "Ton Sapia",
+      "img": "logo.png"
+    }
+  ]
+}

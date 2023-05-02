@@ -1,4 +1,6 @@
 @import '_variables';
+@import './shared/header';
+@import './shared/buttons';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 *,
@@ -14,6 +16,7 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   color: $text-color;
+  font-family: roboto;
 }  
 
 h1 {  
@@ -71,10 +74,5 @@ label {
 
 /* Mobile and Tablet */
 @media (min-width: 321px) and (max-width: 768px) {
-
-}
-
-/* Tablet and Desktop */
-@media (min-width: 769px) and (max-width: 1440px) {
 
 }

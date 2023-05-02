@@ -2,7 +2,7 @@ Este é um projeto [Next.js](https://nextjs.org/)
 
 ## Começando
 
-First, instale todas as dependências do projeto:
+Primeiro, instale todas as dependências do projeto:
 
 ```bash
 npm install
@@ -10,7 +10,7 @@ npm install
 yarn install
 ```
 
-Depois, execute o servidor de desenvolvimento:
+Depois, execute o servidor de desenvolvimento e a Fake API:
 
 ```bash
 npm run dev
@@ -23,7 +23,8 @@ Abra em seu navegador [http://localhost:3000](http://localhost:3000) para ver o 
 [API routes](https://nextjs.org/docs/api-routes/introduction) podem ser acessadas em [http://localhost:3000/api/index](http://localhost:3000/api/index).
 
 
-Esse projeto usa [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) para otimizar e carregar automaticamente uma fonte personalizada do Google.
+Para acessar a Fake API basta acessar [http://localhost:3030](http://localhost:3030) em seu navegador.
+
 
 ## Saiba mais
 

@@ -1,0 +1,49 @@
+button {      
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 8px; 
+  width: 104px;
+  height: 32px;
+  left: 1594px;
+  top: 127px;
+  border: none;
+  border-radius: 32px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.btn-pry {
+  background: $primary;
+  color: $light;
+}
+
+.btn-pry:hover {
+  background: $primary-step-300;
+  color: $light;
+}
+
+.btn-sec {
+  background: transparent;
+  color: $dark;
+}
+
+.btn-ter {
+  background: $tertiary;
+  color: $light;
+}
+
+.btn-qua {
+  background: $quartenary;
+  color: $light;
+}
+
+.btn-link {
+  background: transparent;
+  color: $text-color;
+}
+
+.btn-link:hover {
+  background: $primary-step-300;
+  color: $light;
+}

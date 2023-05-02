@@ -1,0 +1,178 @@
+@import 'caroussel';
+@import 'caroussel-theme';
+
+.header {
+  display: flex;
+  margin: 3.5rem 2.4rem;  
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(77, 77, 77, 0.1);
+
+  .logo {    
+    margin-right: 20px;
+  }
+
+  .nav {
+    position: absolute;
+
+    .nav-menu-list {
+      height: 100%;
+      width: 100%;
+      position: fixed;
+      top: 9.7rem;
+      left: 0;
+      transition: all 0.3s ease;
+      z-index: -1;
+
+      &.active {
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 5;
+
+        .nav-menu {
+          left: 0;
+        }
+      }
+
+      .nav-menu {
+        padding: 4.8rem 2.4rem;
+        background-color: $primary;
+        position: relative;
+        left: -200rem;
+        transition: all 0.3s ease;
+
+        .nav-list {
+          list-style: none;
+
+          li {
+            margin-bottom: 3.2rem;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+
+            a {
+              font-weight: 400;
+              font-size: 2.4rem;
+              line-height: 2.5rem;             
+              color: $light;
+              text-decoration: none;
+              position: relative;
+
+              &:after {
+                content: '';
+                position: absolute;
+                bottom: 2px;
+                left: 0;
+                border-bottom: 1px solid $secondary;
+                width: 0;
+                transition: width 0.2s ease;
+              }
+
+              &:hover::after {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .slick-slider {    
+    height: 50px;    
+    width: 400px;
+    margin: 0px auto;
+
+    .slick-track {
+        .currency-item {
+            text-align: center;
+            outline: none;
+            padding: 0 15px;
+            min-width: 200px;
+
+            p {
+                font-size: 16px;
+                color: $text-color;
+                margin: 0;
+                line-height: 50px;
+                display: inline-block;
+
+              .negative {
+                color: $danger;
+              }
+
+              .positive {
+                color: $success;
+              }
+            }
+        }
+    }
+  }
+}
+
+
+@media (max-width: 320px) {
+  .header {    
+    max-width: 320px;
+
+    .nav-menu-icon img {
+      float: right;
+    }
+  }
+}
+
+/* Mobile and Tablet */
+@media (min-width: 321px) and (max-width: 768px) {
+  .header {   
+    max-width: 768px;
+
+    .nav-menu-icon img {
+      float: right;
+    }
+
+    .login-buttons, .slick-slider {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .header {  
+    .nav-menu-icon {
+      display: none;
+    }
+
+    .nav {
+      position: static;
+
+      .nav-menu-list {
+        position: static;
+
+        .nav-menu {
+          padding: 0;
+          background-color: unset;
+          position: static;
+
+          .nav-list {
+            display: flex;
+
+            li {
+              margin-bottom: 0;
+              margin-right: 4.2rem;
+
+              &:last-child {
+                margin-right: 0;
+              }
+
+              a {
+                font-size: 1.4rem;
+                line-height: 1.4rem;
+                color: $secondary;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
