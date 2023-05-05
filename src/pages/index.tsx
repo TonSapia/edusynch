@@ -1,21 +1,23 @@
-import Header from "@/components/shared/Header";
 import { Component } from "react";
+import Header from "@/components/shared/Header";
+import Footer from "@/components/shared/Footer";
+import CardsSection from "@/components/landpage/CardsSection";
+import TableSection from "@/components/landpage/TableSection";
+import BannerSection from "@/components/landpage/BannerSection";
+import SubscribeSection from "@/components/landpage/SubscribeSection";
 
-type HomeProps = {}
-type HomeState = {
-  name: string;
-}
-
-export default class Home extends Component<HomeProps, HomeState> {
+export default class Home extends Component {
 
   render() {
     return (
-      <>
-        <Header />       
-        <img src = "assets/images/Group 10.svg" /> 
-        <img src = "assets/images/Group 11.svg" /> 
-        <img src = "assets/images/Group 12.svg" /> 
-      </>      
+      <div className="landpage">
+        <Header navbar={true} login={false} />
+        <BannerSection />
+        <CardsSection />
+        <TableSection />
+        <SubscribeSection />
+        <Footer />
+      </div>      
     )
   }
 }
