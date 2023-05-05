@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import NavItem from './NavItem';
 
-const MENU_LIST = [
-  { text: 'About us', href: 'about' },
-  { text: 'Top Cryptos', href: 'locations' }  
+const menuItens = [
+  { text: 'About us', href: '#' },
+  { text: 'Top Cryptos', href: '#table-section' }  
 ];
 
 const Navbar = ({ navActive }: { navActive: boolean }) => {
@@ -17,7 +17,7 @@ const Navbar = ({ navActive }: { navActive: boolean }) => {
       <div className={`${navActive ? 'active' : ''} nav-menu-list`}>
         <div className='nav-menu'>
           <ul className='nav-list'>
-            {MENU_LIST.map((menu) => (
+            {menuItens.map((menu) => (
               <li key={menu.text}>
                 <NavItem {...menu} />
               </li>

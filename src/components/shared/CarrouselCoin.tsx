@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Slider from "react-slick";
 
 interface CurrencyCarouselProps {
@@ -29,7 +29,7 @@ const CarrouselCoin: React.FC<CurrencyCarouselProps> = ({ currencies }) => {
       {currencies.map(currency => (
         <div className="currency-item" key={currency.asset_id}>
           <p>
-            <b>{currency.asset_id}  {currency.value}</b>  
+            <b>{currency.asset_id}  {currency.value.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</b>  
             <label className={`${(Number('currency.variation') >= 0) ? "positive" : "negative"}`}>
               {Number('currency.variation') >= 0 ? `+${currency.variation}` : currency.variation}
             </label>

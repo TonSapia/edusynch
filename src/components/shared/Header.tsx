@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import Link from 'next/link';
 import CarrouselCoin from './CarrouselCoin';
 import LoginButtons from './LoginButtons';
+import AvatarMenu from './AvatarMenu';
 import axios from 'axios';
 
 interface Currencies { 
@@ -15,7 +16,13 @@ interface Currencies {
   variation: string;  
 }
 
-export default function Header() {
+interface HeaderProps {
+  navbar: boolean;
+  login: boolean;
+}
+
+const Header: React.FC<HeaderProps> = ({ navbar, login }) => {
+
 
   const [navActive, setNavActive] = useState(false);
   const [currencies, setCurrencies] = useState<Currencies[]>([]);
@@ -24,7 +31,7 @@ export default function Header() {
     const getCurrencies = async () => {
       try {
         const response = await axios.get<Currencies[]>(
-          'https://rest.coinapi.io/v1/assets?filter_asset_id=BTC,ETH,XLM,XRP,ADA',
+          'https://rest.coinapi.io/v1/assets?filter_asset_id=BTC,ETH,XLM,XRP,ADA,EUR,JPY,CHF,SEK,GBP',
           {
             headers: {
               'X-CoinAPI-Key': '63909DE3-908B-46C3-A2B4-613B7608EECF',
@@ -38,7 +45,7 @@ export default function Header() {
             price_usd: data.price_usd,
             volume_1day_usd: data.volume_1day_usd,
             volume_1hrs_usd: data.volume_1hrs_usd,
-            value: Number(data.price_usd.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})),            
+            value: data.price_usd,            
             variation: ((data.volume_1hrs_usd - data.volume_1day_usd) / (data.volume_1day_usd * 100)).toFixed(4).toString()
           };
         });  
@@ -64,9 +71,12 @@ export default function Header() {
           <Image src='assets/shared/mobile/hamburger-menu.svg' alt='close menu' height={34} width={34} />
         )}
       </div>
-      <Navbar navActive={navActive} />
+      {navbar && <Navbar navActive={navActive} />}      
       <CarrouselCoin currencies={currencies} />
-      <LoginButtons />
+      {!login && <LoginButtons />}   
+      {login && <AvatarMenu />}        
     </header>
   );
 }
+
+export default Header;
