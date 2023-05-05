@@ -2,8 +2,7 @@
 @import 'caroussel-theme';
 
 .header {
-  display: flex;
-  margin: 3.5rem 2.4rem;  
+  display: flex;  
   align-items: center;
   padding: 20px;
   box-shadow: 0px 4px 8px rgba(77, 77, 77, 0.1);
@@ -84,28 +83,33 @@
     margin: 0px auto;
 
     .slick-track {
+
+      .slick-slide {
+        width: 250px !important;
+
         .currency-item {
-            text-align: center;
-            outline: none;
-            padding: 0 15px;
-            min-width: 200px;
+          text-align: center;
+          outline: none;
+          padding: 0 15px;
+          min-width: 200px;
 
-            p {
-                font-size: 16px;
-                color: $text-color;
-                margin: 0;
-                line-height: 50px;
-                display: inline-block;
+          p {
+              font-size: 16px;
+              color: $text-color;
+              margin: 0;
+              line-height: 50px;
+              display: inline-block;
 
-              .negative {
-                color: $danger;
-              }
-
-              .positive {
-                color: $success;
-              }
+            .negative {
+              color: $danger;
             }
+
+            .positive {
+              color: $success;
+            }
+          }
         }
+      }       
     }
   }
 }

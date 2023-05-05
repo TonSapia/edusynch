@@ -1,0 +1,21 @@
+.avatar-menu {
+  display: fixed;
+  width: 300px;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+
+  .avatar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    button {
+      display: flex;
+      width: 100px;
+      background-color: transparent;
+    }
+  }  
+}
