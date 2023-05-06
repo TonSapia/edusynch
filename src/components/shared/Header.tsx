@@ -52,7 +52,21 @@ const Header: React.FC<HeaderProps> = ({ navbar, login }) => {
 
         setCurrencies(currencies);        
       } catch (error) {
-        console.error(error);
+
+        const data = [
+          {asset_id: 'BTC', value: 200, price_usd: 3000.00, volume_1hrs_usd: 3250, volume_1day_usd: 2900, variation: '5.340'  },
+          {asset_id: 'BTC', value: 200, price_usd: 3000.00, volume_1hrs_usd: 3250, volume_1day_usd: 2900, variation: '5.340'  },
+          {asset_id: 'BTC', value: 200, price_usd: 3000.00, volume_1hrs_usd: 3250, volume_1day_usd: 2900, variation: '5.340'  },
+          {asset_id: 'BTC', value: 200, price_usd: 3000.00, volume_1hrs_usd: 3250, volume_1day_usd: 2900, variation: '5.340'  },
+          {asset_id: 'BTC', value: 200, price_usd: 3000.00, volume_1hrs_usd: 3250, volume_1day_usd: 2900, variation: '5.340'  },
+          {asset_id: 'BTC', value: 200, price_usd: 3000.00, volume_1hrs_usd: 3250, volume_1day_usd: 2900, variation: '5.340'  },
+          {asset_id: 'BTC', value: 200, price_usd: 3000.00, volume_1hrs_usd: 3250, volume_1day_usd: 2900, variation: '5.340'  },
+          {asset_id: 'BTC', value: 200, price_usd: 3000.00, volume_1hrs_usd: 3250, volume_1day_usd: 2900, variation: '5.340'  },
+          {asset_id: 'BTC', value: 200, price_usd: 3000.00, volume_1hrs_usd: 3250, volume_1day_usd: 2900, variation: '5.340'  },
+          {asset_id: 'BTC', value: 200, price_usd: 3000.00, volume_1hrs_usd: 3250, volume_1day_usd: 2900, variation: '5.340'  },
+        ]
+
+        setCurrencies(data);
       }
     };
 

@@ -25,15 +25,20 @@ const CarrouselCoin: React.FC<CurrencyCarouselProps> = ({ currencies }) => {
   };
   
   return (
-    <Slider {...settings}>
+    <Slider className="carrousel-coin" {...settings}>
       {currencies.map(currency => (
         <div className="currency-item" key={currency.asset_id}>
-          <p>
-            <b>{currency.asset_id}  {currency.value.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</b>  
-            <label className={`${(Number('currency.variation') >= 0) ? "positive" : "negative"}`}>
-              {Number('currency.variation') >= 0 ? `+${currency.variation}` : currency.variation}
+          <div className="asset-id">
+            <b>{currency.asset_id}</b>
+          </div>
+          <div className="value">
+            <b>{currency.value.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</b>
+          </div>
+          <div className="variation">
+            <label className={`${(Number(currency.variation) >= 0) ? "positive" : "negative"}`}>
+              <b>{Number(currency.variation) >= 0 ? `+${currency.variation}` : currency.variation}</b>
             </label>
-          </p>          
+          </div>               
         </div>
       ))}
     </Slider>

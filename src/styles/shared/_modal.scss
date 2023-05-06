@@ -20,5 +20,28 @@
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+
+    form {
+      .form-group {
+        .coin {
+          color: $primary;
+        }
+
+        .synch {
+          color: $text-color;
+        }
+
+        button {
+          background: $primary;
+          border-radius: 32px;
+        }        
+      }
+    }
+
+    .login-modal {
+      h5 {
+        text-align: center;
+      }
+    }    
   }
 }

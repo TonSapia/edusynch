@@ -32,8 +32,7 @@ export default function TableSection() {
     try {
       const response = await axios.get<Result[]>('http://localhost:3030/results', {
         params: {
-          limit: 5,
-          offset: 0
+          _limit: 5
         }
       });
 
@@ -51,12 +50,12 @@ export default function TableSection() {
 
   const loadMoreResults = async () => {
     setLoadingResults(true);
-
+    
     try {
-      const response = await axios.get<Result[]>('/api/result', {
+      const response = await axios.get<Result[]>('http://localhost:3030/results', {
         params: {
-          limit: 5,
-          offset: results.length
+          _limit: 5,
+          _start: results.length
         }
       });
 

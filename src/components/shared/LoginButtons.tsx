@@ -25,6 +25,7 @@ export default function LoginButtons() {
         primaryButtonAction={handleModalClose}
         secondaryButtonText="Cancel"
         secondaryButtonAction={handleModalClose}
+        type="login"
       />   
     </div>
   );
