@@ -1,10 +1,18 @@
 import Cards from "@/components/landpage/Cards";
 
-export default function CardsSection() {      
+export default function CardsSection() {    
+  const cards = [
+    { "link": "assets/images/B.svg", "title": "Crypto Solutions", "subtitle": "For your company", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam," },
+    { "link": "assets/images/U.svg", "title": "Crypto Solutions", "subtitle": "For your company", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam," },
+    { "link": "assets/images/V.svg", "title": "Crypto Solutions", "subtitle": "For your company", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam," },
+    { "link": "assets/images/C.svg", "title": "Crypto Solutions", "subtitle": "For your company", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam," }
+  ];
+
   return(
     <section className='cards-section'>         
       <div className="grid-cards">
-        <Cards />          
+        <Cards cards={cards.slice(0, 2)} style="top" />     
+        <Cards cards={cards.slice(2, 4)} style="down" />       
       </div>
       <div className="grid-text">
         <div className="content">

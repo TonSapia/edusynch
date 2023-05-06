@@ -7,13 +7,29 @@
     gap: 0px;   
 
     .grid-text  { 
-      grid-area: text;       
-      text-align: center; 
+      display: flex;
+      grid-area: text;
+      text-align: center;
       margin: 30px auto;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center;
 
       .content {
-        margin: 0px auto;
-        width: 50%;
+        display: flex;
+        width: 75%;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: stretch;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 20px;
+
+        h1 {
+          color: $primary;
+          font-weight: 700 !important;
+        }
 
         h1, h4 {
           text-align: left;
@@ -21,17 +37,24 @@
         }
         
         button {
-          width: 200px;
+          width: 278px;
+          height: 48px;
+          background: #FBAB34;
+          border-radius: 32px;
+          margin: 0px;
+          margin-bottom: 50px;          
         }
   
         .tags {
-          margin: 20px;
   
           .tag {
-            padding: 10px;
+            padding: 4px 16px;
             background-color: $primary-step-100;
             color: $primary;
-            margin: 15px;
+            margin-right: 15px;
+            height: 40px;
+            font-size: 20px;
+            line-height: 32px;
           }
         } 
       }  
@@ -59,7 +82,7 @@
   .cards-section {
     margin-top: 50px;
     display: grid;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 57% 43%;
     grid-template-areas: 'cards text';
     gap: 0px; 
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #F7F7F7 100%);
@@ -84,65 +107,87 @@
       flex-grow: 0;
 
       .content {
-        margin-top: 110px;   
+        margin-top: 110px;
+        display: flex;
+        gap: 20px;
+        flex-direction: column; 
+
+        h3 {
+          color: $primary;
+        }
+
+        button {
+          width: 176px;
+          height: 48px;
+          margin: 0px;
+          margin-top: 10px;
+        }
       }
     }
 
     .grid-cards {
-      grid-area: cards;       
-      text-align: center; 
+      grid-area: cards;
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
       align-content: flex-end;
-      justify-content: space-evenly;
-      align-items: stretch;
+      justify-content: center;
+      align-items: center; 
+      margin-bottom: 100px;
 
-      .cards {       
-        display: grid;        
-        grid-template-areas: 'card0 card1' 'card2 card3';    
-        width: 690px;    
-        
+      .cards-top {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-areas: 'card0 card1';
+        width: 625px;
+        margin-right: 90px;
+
         .card0 {
-          grid-area: card0;
+          grid-area: card0; 
           justify-self: start;
         }
 
         .card1 {
           grid-area: card1; 
-          justify-self: start;
+          justify-self: start;  
+        }
+      }
+
+      .cards-down {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-areas: 'card0 card1';
+        width: 625px;
+        margin-top: 30px;
+
+        .card0 {
+          grid-area: card0;
+          justify-self: end;
         }
 
-        .card2 {
-          grid-area: card2; 
-          justify-self: end; 
-          margin-top: 60px;         
+        .card1 {
+          grid-area: card1;
+          justify-self: end;
         }
+      }
+    }
 
-        .card3 {
-          grid-area: card3; 
-          justify-self: end;   
-          margin-top: 60px;       
-        }
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 24px;
+      gap: 16px;          
+      width: 280px;
+      height: 268px;
+      left: 424px;
+      top: 1086px;
+      background: #FFFFFF;
+      box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.05);
+      border-radius: 6px;
 
-        .card {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          padding: 24px;
-          gap: 16px;          
-          width: 280px;
-          height: 268px;
-          left: 424px;
-          top: 1086px;
-          background: #FFFFFF;
-          box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.05);
-          border-radius: 6px;
-
-          .card-content {
-            text-align: left;
-          }
-        }
+      .card-content {
+        text-align: left;
       }
     }
   }
@@ -159,9 +204,27 @@
       h1 {
         margin: 50px;
       }
+     
+      .negative {
+        font-weight: bold;
+        color: $danger;
+      }
 
-      button {
+      .positive {
+        font-weight: bold;
+        color: $success;
+      }   
+
+      .btn-table {
+        width: 80px;
+        height: 32px;
+        background-color: $tertiary-step-700;
+      }
+
+      .btn-link-table {
         width: 200px;
+        height: 32px;
+        font-size: 16px;
       }
 
       .chip-table {

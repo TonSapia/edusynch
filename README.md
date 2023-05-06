@@ -6,7 +6,7 @@ Primeiro, instale todas as dependências do projeto:
 
 ```bash
 npm install
-# or
+# ou
 yarn install
 ```
 
@@ -14,7 +14,7 @@ Depois, execute o servidor de desenvolvimento e a Fake API:
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
 ```
 

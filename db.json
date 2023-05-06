@@ -10,5 +10,20 @@
       "name": "Ton Sapia",
       "img": "logo.png"
     }
+  ],
+  "results": [
+    { "id": 1, "crypto": "BITCOIN", "price": 3000.00, "volume_1hrs_usd": 3001, "volume_1day_usd": 2500, "link": "assets/images/ETH.svg"},  
+    { "id": 2, "crypto": "BITCOIN", "price": 3000.00, "volume_1hrs_usd": 3001, "volume_1day_usd": 4000, "link": "assets/images/ETH.svg" },
+    { "id": 3, "crypto": "BITCOIN", "price": 3000.00, "volume_1hrs_usd": 3001, "volume_1day_usd": 2999, "link": "assets/images/ETH.svg" },
+    { "id": 4, "crypto": "BITCOIN", "price": 3000.00, "volume_1hrs_usd": 3001, "volume_1day_usd": 1000, "link": "assets/images/ETH.svg" },
+    { "id": 5, "crypto": "BITCOIN", "price": 3000.00, "volume_1hrs_usd": 3001, "volume_1day_usd": 500, "link": "assets/images/ETH.svg" },
+    { "id": 6, "crypto": "BITCOIN", "price": 3000.00, "volume_1hrs_usd": 3001, "volume_1day_usd": 5000, "link": "assets/images/ETH.svg" },
+    { "id": 7, "crypto": "BITCOIN", "price": 3000.00, "volume_1hrs_usd": 3001, "volume_1day_usd": 8000, "link": "assets/images/ETH.svg" },
+    { "id": 8, "crypto": "BITCOIN", "price": 3000.00, "volume_1hrs_usd": 3001, "volume_1day_usd": 300, "link": "assets/images/ETH.svg" },
+    { "id": 9, "crypto": "BITCOIN", "price": 3000.00, "volume_1hrs_usd": 3001, "volume_1day_usd": 2700, "link": "assets/images/ETH.svg" },
+    { "id": 10, "crypto": "BITCOIN", "price": 3000.00, "volume_1hrs_usd": 3001, "volume_1day_usd": 3700, "link": "assets/images/ETH.svg" }
   ]
 }
+
+
+  

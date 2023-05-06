@@ -8,8 +8,8 @@ type Data = {
 export default function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
 
   if (req.method === 'GET') {
-    const { id } = req.query;
-    
+    // const { id } = req.query;
+    console.log("TESTE INDEX GET");    
   } else {
     res.status(405).end(); // Método HTTP não permitido
   }

@@ -46,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({ navbar, login }) => {
             volume_1day_usd: data.volume_1day_usd,
             volume_1hrs_usd: data.volume_1hrs_usd,
             value: data.price_usd,            
-            variation: ((data.volume_1hrs_usd - data.volume_1day_usd) / (data.volume_1day_usd * 100)).toFixed(4).toString()
+            variation: ((data.volume_1hrs_usd - data.volume_1day_usd) / (data.volume_1day_usd) * 100).toFixed(4).toString()
           };
         });  
 
