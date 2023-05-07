@@ -222,6 +222,17 @@
                 font-weight: bold;
                 color: $text-color;
               }
+
+              .holdings {
+                width: 140px;
+                margin: 0px auto;
+                text-align: left;
+
+                .quantity {
+                  color: $primary;
+                  font-size: 12px;
+                }
+              }              
             }
           }  
           

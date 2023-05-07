@@ -38,6 +38,10 @@
     { "asset_id": "BTC", "value": 200, "price_usd": 3000.00, "volume_1hrs_usd": 3250, "volume_1day_usd": 2900, "variation": "5.340", "url_icon": "assets/images/ETH.svg"  },
     { "asset_id": "BTC", "value": 200, "price_usd": 3000.00, "volume_1hrs_usd": 3250, "volume_1day_usd": 2900, "variation": "5.340", "url_icon": "assets/images/ETH.svg"  },
     { "asset_id": "BTC", "value": 200, "price_usd": 3000.00, "volume_1hrs_usd": 3250, "volume_1day_usd": 2900, "variation": "5.340", "url_icon": "assets/images/ETH.svg"  }
+  ],
+
+  "wallet": [
+    { "user_id": 1,"asset_id": "BTC", "quantity": 200 }
   ]
 }
 

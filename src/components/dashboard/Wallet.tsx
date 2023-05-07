@@ -12,7 +12,7 @@ import Chip from '@mui/material/Chip';
 interface Data {
   id: number;
   crypto: string;
-  price: string;
+  price: number;
   change: string;
   icon: string;
 }
@@ -20,15 +20,15 @@ interface Data {
 export default function Wallet() {
 
   const [data, setData] = useState<Data[]>([
-    { 'id': 1, 'crypto': 'BITCOIN', 'price': 'R$ 3000,00', 'change': '+5,67%', 'icon': 'assets/images/ETH.svg' },  
-    { 'id': 2, 'crypto': 'BITCOIN', 'price': 'R$ 3000,00', 'change': '+5,67%', 'icon': 'assets/images/ETH.svg' },
-    { 'id': 3, 'crypto': 'BITCOIN', 'price': 'R$ 3000,00', 'change': '+5,67%', 'icon': 'assets/images/ETH.svg' },
-    { 'id': 4, 'crypto': 'BITCOIN', 'price': 'R$ 3000,00', 'change': '+5,67%', 'icon': 'assets/images/ETH.svg' },
-    { 'id': 5, 'crypto': 'BITCOIN', 'price': 'R$ 3000,00', 'change': '+5,67%', 'icon': 'assets/images/ETH.svg' }   
+    { 'id': 1, 'crypto': 'BITCOIN', 'price': 3000.00, 'change': '+5,67%', 'icon': 'assets/images/ETH.svg' },  
+    { 'id': 2, 'crypto': 'BITCOIN', 'price': 3000.00, 'change': '+5,67%', 'icon': 'assets/images/ETH.svg' },
+    { 'id': 3, 'crypto': 'BITCOIN', 'price': 3000.00, 'change': '+5,67%', 'icon': 'assets/images/ETH.svg' },
+    { 'id': 4, 'crypto': 'BITCOIN', 'price': 3000.00, 'change': '+5,67%', 'icon': 'assets/images/ETH.svg' },
+    { 'id': 5, 'crypto': 'BITCOIN', 'price': 3000.00, 'change': '+5,67%', 'icon': 'assets/images/ETH.svg' }   
   ]);
 
   const handleAdd = () => {
-    const newData = { id: data.length + 1, crypto: 'ETH', price: 'R$ 3000,00', change: '-4,23%', icon: 'assets/images/ETH.svg' };
+    const newData = { id: data.length + 1, crypto: 'ETH', price: 3000.00, change: '-4,23%', icon: 'assets/images/ETH.svg' };
     setData([...data, newData]);
   };
 
@@ -90,7 +90,12 @@ export default function Wallet() {
                     <TableRow>
                       <TableCell align='center'>{row.id}</TableCell>
                       <TableCell align='center'><Chip className="chip-table" icon={<img src="assets/images/ETH.svg"/>} label={row.crypto} /></TableCell>
-                      <TableCell align='center'>{row.price}</TableCell>
+                      <TableCell align='center'>
+                        <div className="holdings">
+                          <p>US{row.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}</p>
+                          <p className="quantity">345 BTC</p>
+                        </div>                        
+                      </TableCell>
                       <TableCell align='center'>{row.change}</TableCell>
                       <TableCell align='center'>
                         <button className="btn" onClick={() => handleDelete(row.id)}>
