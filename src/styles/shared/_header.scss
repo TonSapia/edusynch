@@ -88,6 +88,10 @@
   .login-buttons {
     grid-area: login; 
     justify-self: end;
+    
+    button {
+      width: 80px;
+    }
   }
 
 }

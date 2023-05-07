@@ -88,7 +88,7 @@ form {
     input[type="password"],
     button[type="submit"] {
       padding: 8px;
-      border: 1px solid #ccc;
+      border: 1px solid $secondary;
       border-radius: 4px;
       font-size: 16px;
     }
@@ -97,12 +97,12 @@ form {
     input[type="password"]:focus,
     button[type="submit"]:focus {
       outline: none;
-      border-color: #0078d7;
+      border-color: $secondary;
     }
 
     button[type="submit"] {
-      background-color: #0078d7;
-      color: #fff;
+      background-color: $secondary;
+      color: $light;
       font-weight: bold;
       cursor: pointer;
       transition: background-color 0.2s ease;
@@ -110,7 +110,7 @@ form {
     }
     
     button[type="submit"]:hover {
-      background-color: #005ea3;
+      background-color: $secondary;
     }
   }
 }

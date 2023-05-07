@@ -20,6 +20,7 @@ interface Result {
 export default function TableSection() {  
   const [results, setResults] = useState<Result[]>([]);
   const [moreResults, setMoreResults] = useState<boolean>(true);
+  const [lessResults, setLessResults] = useState<boolean>(false);
   const [loadingResults, setLoadingResults] = useState<boolean>(false);
 
   useEffect(() => {
@@ -32,15 +33,19 @@ export default function TableSection() {
     try {
       const response = await axios.get<Result[]>('http://localhost:3030/results', {
         params: {
-          _limit: 5
+          _limit: 6
         }
       });
 
-      if (response.data.length < 5) {
+      if (response.data.length < 6) {
         setMoreResults(false);
+        setLessResults(true);
+      } else {
+        setLessResults(false);
+        setMoreResults(true);
       }
 
-      setResults(response.data);
+      setResults(response.data.slice(0,-1));
     } catch (error) {
       console.error(error);
     }
@@ -54,14 +59,17 @@ export default function TableSection() {
     try {
       const response = await axios.get<Result[]>('http://localhost:3030/results', {
         params: {
-          _limit: 5,
+          _limit: 6,
           _start: results.length
         }
       });
 
-      if (response.data.length < 5) {
+      if (response.data.length < 6) {
         setMoreResults(false);
+        setLessResults(true);
       }
+
+      response.data.slice(0,-1);
 
       setResults([...results, ...response.data]);
     } catch (error) {
@@ -109,7 +117,13 @@ export default function TableSection() {
             <button className='btn btn-link btn-link-table primary' onClick={loadMoreResults} disabled={loadingResults}>
               {loadingResults ? 'Loading...' : 'View more +'}
             </button>
-          )}          
+          )}      
+
+          {lessResults && (
+            <button className='btn btn-link btn-link-table primary' onClick={loadResults} >
+              View less +
+            </button>
+          )}      
         </TableContainer>
     </section>
   );    

@@ -21,27 +21,89 @@
     top: 50%;
     transform: translateY(-50%);
 
-    form {
-      .form-group {
-        .coin {
-          color: $primary;
-        }
+    .coin {
+      color: $primary;
+    }
 
-        .synch {
+    .synch {
+      color: $text-color;
+    }
+
+    .close {
+      width: 100%;
+      text-align: right;      
+
+      button {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+
+        svg {
           color: $text-color;
         }
+      }
+    }
 
+    form {
+      .form-group { 
         button {
           background: $primary;
           border-radius: 32px;
-        }        
+        }    
+
+        a {
+          text-align: right;
+        }
+        
+        input[type="password"] {          
+          height: 38px;
+          border-right: none;
+        }
+
+        .submit {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          padding: 14px 24px;
+          gap: 10px;
+          border-radius: 32px;
+        }
+
+        .MuiFormControlLabel-root {
+          margin: 0px;
+
+          .MuiSvgIcon-root {
+            color: $primary;
+          }
+        }
       }
     }
 
     .login-modal {
+      display: flex;
+      gap: 30px;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+
       h5 {
         text-align: center;
       }
-    }    
+    } 
+    
+    .register-modal {
+      display: flex;
+      gap: 30px;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+
+      h5 {
+        text-align: center;
+      }
+    }
   }
 }
