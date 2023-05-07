@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-const apiKey1 = process.env.COINBASE_API_KEY_1;
-const apiKey2 = process.env.COINBASE_API_KEY_2;
+const apiKey = process.env.NEXT_PUBLIC_COINBASE_API_KEY;
 
 interface Asset {
   asset_id: string;
@@ -37,10 +36,10 @@ export const getAssetsAPI = async (limit = 6, start = 0) => {
     const assetsUrl = 'https://rest.coinapi.io/v1/assets';
     const iconsUrl = `https://rest.coinapi.io/v1/assets/icons/32`;
     const assetsResponse = (await axios.get(assetsUrl, { 
-      headers: { 'X-CoinAPI-Key': apiKey1 }
+      headers: { 'X-CoinAPI-Key': apiKey }
     })).data.slice(0, 11);
     const iconsResponse = (await axios.get(iconsUrl, { 
-      headers: { 'X-CoinAPI-Key': apiKey1 }
+      headers: { 'X-CoinAPI-Key': apiKey }
     })).data.slice(0, 11);
 
     const assetsWithIcons = assetsResponse.map((asset: Asset) => ({
@@ -62,7 +61,7 @@ export const getCurrencyAPI = async () => {
       'https://rest.coinapi.io/v1/assets?filter_asset_id=BTC,ETH,XLM,XRP,ADA,EUR,JPY,CHF,SEK,GBP',
       {
         headers: {
-          'X-CoinAPI-Key': apiKey1,
+          'X-CoinAPI-Key': apiKey,
         },
       }
     );

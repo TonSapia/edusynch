@@ -38,3 +38,8 @@ yarn dev
 Abra em seu navegador [http://localhost:3000](http://localhost:3000) para acessar o site.
 
 Para acessar a Fake API basta acessar [http://localhost:3030](http://localhost:3030) em seu navegador.
+
+
+## API CoinAPI
+
+Para alterar a Key do CoinAPI basta, na raiz do projeto, acessar o arquivo .env.local e alterar o valor variável NEXT_PUBLIC_COINBASE_API_KEY.
