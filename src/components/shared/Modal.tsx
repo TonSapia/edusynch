@@ -56,8 +56,8 @@ const SharedModal: React.FC<IModalProps> = ({
           <div className="login-modal">
             <h5>Sign in to <span className="coin">Coin</span><span className="synch">Synch</span></h5> 
             <form>               
-              <EmailInput /> 
-              <PasswordInput passwordConfirm={false} />
+              <EmailInput required={true} /> 
+              <PasswordInput passwordConfirm={false} required={true} />
 
               <div className="form-group">
                 <a href="#">Forgot password?</a>
@@ -77,14 +77,14 @@ const SharedModal: React.FC<IModalProps> = ({
         {((type == "register" && !typeModal) || typeModal == "register") && 
           <div className="register-modal">
             <h5>Sign up to <span className="coin">Coin</span><span className="synch">Synch</span></h5> 
-            <form>  
-              <NameInput /> 
-              <EmailInput /> 
-              <PasswordInput passwordConfirm={true} />
-              <SingleCheckboxInput label="I have read and accept the Privacy Policy and Terms of User Sign up." />
+            <form action="/dashboard">  
+              <NameInput required={true} /> 
+              <EmailInput required={true} /> 
+              <PasswordInput passwordConfirm={true} required={true} />
+              <SingleCheckboxInput required={true} label="I have read and accept the Privacy Policy and Terms of User Sign up." />
              
-              <div className="form-group">
-                <Link className="btn-pry submit" href={primaryButtonAction}>Sign in</Link>
+              <div className="form-group">                
+                <button className="btn-pry submit" type="submit">Sign in</button>
               </div>    
 
               <div className="form-group">                

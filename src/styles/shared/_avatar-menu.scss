@@ -1,4 +1,4 @@
-.avatar-menu {
+.login-menu {
   display: fixed;
   width: 300px;
   flex-wrap: nowrap;
@@ -6,16 +6,29 @@
   justify-content: flex-start;
 
   .avatar {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
+    display: flex;    
+    align-items: center;    
+    right: 0;
+    margin-left: 275px;
 
     button {
       display: flex;
       width: 100px;
       background-color: transparent;
     }
-  }  
+  } 
+}
+
+#demo-customized-menu { 
+  .menu-item {
+    width: 100%;
+
+    .menu-link {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: nowrap;
+      flex-direction: row;
+    }
+  }
 }

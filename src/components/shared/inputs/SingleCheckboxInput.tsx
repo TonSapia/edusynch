@@ -7,6 +7,7 @@ interface State {
 
 interface Props {
   label: string;
+  required: boolean;
 }
 
 class SingleCheckboxInput extends React.Component<Props, State> {
@@ -29,7 +30,7 @@ class SingleCheckboxInput extends React.Component<Props, State> {
     return (
       <div className="form-group">
         <FormControlLabel
-          control={<Checkbox checked={accepted} onChange={this.handleTermsChange} />}
+          control={<Checkbox required={this.props.required} checked={accepted} onChange={this.handleTermsChange} />}
           label={this.props.label}
         />
       </div>      

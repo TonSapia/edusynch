@@ -8,8 +8,12 @@ interface State {
   emailError: string;
 }
 
-class EmailInput extends React.Component<{}, State> {
-  constructor(props: {}) {
+interface Props {
+  required: boolean;
+}
+
+class EmailInput extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = {
       email: '',
@@ -37,6 +41,7 @@ class EmailInput extends React.Component<{}, State> {
     return (
       <div className="form-group">
         <TextField
+          required={this.props.required}
           label="E-mail"
           value={email}
           onChange={this.handleEmailChange}

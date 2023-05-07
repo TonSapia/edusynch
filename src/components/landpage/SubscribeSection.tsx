@@ -1,5 +1,30 @@
-export default function SubscribeSection() {    
-      
+import React, { useState } from 'react';
+import { getSubscribeAPI } from '../../pages/api/usersAPI';
+
+export default function SubscribeSection() {   
+  const [loadingResults, setLoadingResults] = useState(false);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true); 
+  const [isInputDisabled, setIsInputDisabled] = useState(false);
+  const [inputValue, setInputValue] = useState('');  
+
+  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(event.target.value);
+    const emailValue = event.target.value;
+    const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue); // regex para validar e-mails
+    setIsButtonDisabled(!isEmailValid);
+  };
+
+  const subscribe = async () => {
+    setLoadingResults(true);
+    setIsInputDisabled(true);
+    setIsButtonDisabled(true);
+    await getSubscribeAPI();
+    setLoadingResults(false); 
+    setInputValue('');
+    setIsButtonDisabled(false);
+    setIsInputDisabled(false);
+  }
+          
   return(
     <section className='subscribe-section'>         
       <div className="grid-text">
@@ -21,11 +46,11 @@ export default function SubscribeSection() {
           <form>    
             <div className="form-group">
               <label htmlFor="email">E-mail:</label>
-              <input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Por favor, insira um endereço de e-mail válido." />
+              <input disabled={isInputDisabled} type="email" id="email" name="email" value={inputValue} onChange={handleEmailChange} required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address." />
             </div>
            
             <div className="form-group">
-              <button type="submit">Entrar</button>
+              <button disabled={isButtonDisabled} id="submit" onClick={subscribe} type="submit">{loadingResults ? 'Loading...' : 'Subcribe'}</button>
             </div> 
           </form>             
         </div> 

@@ -1,47 +1,59 @@
 .dashboard {  
 
   .wallet-section {      
-    display: grid;
-    grid-template-columns: 5% 95%;
-    grid-template-areas: "menu wallet";  
-    gap: 0px;
-    align-items: center;
-    align-content: stretch;
-    width: 100vw;
-    height: 100vh;
-    justify-items: center;
+    display: flex;       
 
-    .side-menu {
-      grid-area: menu; 
+    .side-menu {      
+      display: table;
       box-sizing: border-box;  
-      left: 0px;           
-      border-width: 1px 0px;
-      border-style: solid;
-      border-color: #E0DEEA;
+      left: 0px; 
       background: $light;
-      width: 100%;
+      max-width: 300px;
       height: 100%;
       text-align: center;    
 
       ul {
+        border: none;
+
         li {
           justify-content: center;
+          margin-top: 30px;         
 
-          img {
-            cursor: pointer;
-          }          
+          a {
+            display: flex;
+            text-decoration: none;
+            color: $text-color;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+
+            img {
+              cursor: pointer;
+            }          
+  
+            p {
+              width: 150px;
+              text-align: center;
+            }
+          } 
+        }
+
+        .toggle-menu {
+          justify-content: start;
+          margin-left: 5px;
         }
       }
     }
 
-    .wallet-container {        
-      grid-area: wallet;        
+    .wallet-container {  
       background-color: #F9F9F9;
       width: 100%;
       height: 100%;
 
       .wallet {   
-        margin: 30px auto;
+        margin: 0px auto;
+        margin-top: 30px;
         width: 80%;
         height: 80%;       
         display: grid;
@@ -51,14 +63,14 @@
 
         .balance {
           grid-area: balance; 
-          width: 592px;   
+          width: 450px;   
           height: 150px;       
           background: $light;
           box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
           border-radius: 8px;
           justify-self: start;
           display: grid;
-          grid-template-columns: 15% 35% 50%;
+          grid-template-columns: 15% 40% 45%;
           grid-template-areas: 'image text value';
 
           .image {
@@ -68,6 +80,7 @@
             justify-content: center;
             align-items: center;
             flex-wrap: nowrap;
+            margin-left: 10px;
           }
 
           .text {
@@ -94,7 +107,7 @@
           background: $light;
           box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
           border-radius: 8px;
-          justify-self: center;
+          justify-self: end;
           display: grid;
           grid-template-columns: 40% 60%;
           grid-template-areas: 'text image';
@@ -169,6 +182,7 @@
 
         .my-wallet {
           margin-top: 50px;
+          margin-bottom: 50px;
           grid-area: mywallet; 
           left: 155px;
           top: 264px;

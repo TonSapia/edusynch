@@ -7,8 +7,12 @@ interface State {
   nameError: string;
 }
 
-class NameInput extends React.Component<{}, State> {
-  constructor(props: {}) {
+interface Props {
+  required: boolean;
+}
+
+class NameInput extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = {
       name: '',
@@ -35,6 +39,7 @@ class NameInput extends React.Component<{}, State> {
     return (
       <div className="form-group">
         <TextField
+          required={this.props.required}
           label="Name"
           value={name}
           onChange={this.handleNameChange}

@@ -45,11 +45,11 @@ export default function Wallet() {
             <img src="assets/images/J.svg"/>
           </CardContent>
           <CardContent className="text">
-            <h4>Balance in US$</h4>
+            <h5>Balance in US$</h5>
             <p>(approximately)</p>
           </CardContent> 
           <CardContent className="value">
-            <h2>$32,256.56</h2> 
+            <h3>$32,256.56</h3> 
           </CardContent> 
         </Card>
         <Card className="variation"> 

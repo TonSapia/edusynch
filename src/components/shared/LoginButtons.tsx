@@ -17,7 +17,7 @@ const LoginButtons: React.FC = () => {
   };
 
   return (
-    <div className='login-buttons'>
+    <div className='login-menu'>
       <button className="btn btn-link" onClick={() => handleModalOpen("login", "/dashboard")} >Sign in</button>
       <button className="btn btn-pry" onClick={() => handleModalOpen("register", "/dashboard")} >Sign up</button>     
       <Modal

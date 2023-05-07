@@ -12,6 +12,7 @@ interface State {
 
 interface Props {
   passwordConfirm: boolean;
+  required: boolean;
 }
 
 class PasswordInput extends React.Component<Props, State> {
@@ -77,6 +78,7 @@ class PasswordInput extends React.Component<Props, State> {
       <>
         <div className="form-group">
           <TextField
+            required={this.props.required}
             label="Password"
             type={showPassword ? 'text' : 'password'}
             value={password}
@@ -101,6 +103,7 @@ class PasswordInput extends React.Component<Props, State> {
         {this.props.passwordConfirm && (
           <div className="form-group">
             <TextField
+              required={this.props.required}
               label="Confirm password"
               value={confirmPassword}
               onChange={this.handleConfirmPasswordChange}

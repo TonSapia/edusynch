@@ -12,7 +12,7 @@
       text-align: center;
       flex-direction: column;
       flex-wrap: nowrap;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
       padding-left: 100px;
 
@@ -40,7 +40,7 @@
         button {
           width: 278px;
           height: 48px;
-          background: #FBAB34;
+          background: $primary;
           border-radius: 32px;
           margin: 0px;
           margin-bottom: 50px;          
@@ -62,11 +62,16 @@
     }
 
     .grid-image { 
-      grid-area: image;   
-      
-      img {
-        max-width: 100%;
-      }
+      grid-area: image; 
+      margin-left: 80px;
+
+      .caroussel-banner {
+        div {  
+          img {
+            max-width: 100%;
+          }
+        }        
+      }  
     }
 
     .grid-waves { 

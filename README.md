@@ -1,4 +1,17 @@
-Este é um projeto [Next.js](https://nextjs.org/)
+Olá, seja bem vindo!! \{^_^}/ 
+
+Este projeto utiliza [Next.js](https://nextjs.org/)!!
+
+
+## Instalação
+
+Faça o download do node [Nodejs](https://nodejs.org/en/download)
+
+
+# Opcional:
+
+Caso preferir, instale também o [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable) após a instalação do Nodejs
+
 
 ## Começando
 
@@ -10,7 +23,9 @@ npm install
 yarn install
 ```
 
-Depois, execute o servidor de desenvolvimento e a Fake API:
+## Executando
+
+Depois, execute o servidor de desenvolvimento e a Fake API, ambos iniciam rodando o comando abaixo:
 
 ```bash
 npm run dev
@@ -18,17 +33,8 @@ npm run dev
 yarn dev
 ```
 
-Abra em seu navegador [http://localhost:3000](http://localhost:3000) para ver o resultado.
+## Visualizando
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) podem ser acessadas em [http://localhost:3000/api/index](http://localhost:3000/api/index).
-
+Abra em seu navegador [http://localhost:3000](http://localhost:3000) para acessar o site.
 
 Para acessar a Fake API basta acessar [http://localhost:3030](http://localhost:3030) em seu navegador.
-
-
-## Saiba mais
-
-Para saber mais sobre o Next.js, consulte os seguintes recursos:
-
-- [Next.js Documentation](https://nextjs.org/docs) - aprenda sobre os recursos e a API do Next.js.
-- [Learn Next.js](https://nextjs.org/learn) - um tutorial interativo do Next.js.

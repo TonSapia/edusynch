@@ -5,7 +5,7 @@ import Link from 'next/link';
 import CarrouselCoin from './CarrouselCoin';
 import LoginButtons from './LoginButtons';
 import AvatarMenu from './AvatarMenu';
-import axios from 'axios';
+import { getCurrencyAPI } from '../../pages/api/coinbaseAPI';
 
 interface Currencies { 
   asset_id: string;  
@@ -30,16 +30,9 @@ const Header: React.FC<HeaderProps> = ({ navbar, login }) => {
   useEffect(() => {
     const getCurrencies = async () => {
       try {
-        const response = await axios.get<Currencies[]>(
-          'https://rest.coinapi.io/v1/assets?filter_asset_id=BTC,ETH,XLM,XRP,ADA,EUR,JPY,CHF,SEK,GBP',
-          {
-            headers: {
-              'X-CoinAPI-Key': '63909DE3-908B-46C3-A2B4-613B7608EECF',
-            },
-          }
-        );
+        const response = await getCurrencyAPI();
                 
-        const currencies: Currencies[] = response.data.map(data => { 
+        const currencies: Currencies[] = response.map(data => { 
           return {
             asset_id: data.asset_id,           
             price_usd: data.price_usd,
@@ -52,21 +45,7 @@ const Header: React.FC<HeaderProps> = ({ navbar, login }) => {
 
         setCurrencies(currencies);        
       } catch (error) {
-
-        const data = [
-          {asset_id: 'BTC', value: 200, price_usd: 3000.00, volume_1hrs_usd: 3250, volume_1day_usd: 2900, variation: '5.340'  },
-          {asset_id: 'BTC', value: 200, price_usd: 3000.00, volume_1hrs_usd: 3250, volume_1day_usd: 2900, variation: '5.340'  },
-          {asset_id: 'BTC', value: 200, price_usd: 3000.00, volume_1hrs_usd: 3250, volume_1day_usd: 2900, variation: '5.340'  },
-          {asset_id: 'BTC', value: 200, price_usd: 3000.00, volume_1hrs_usd: 3250, volume_1day_usd: 2900, variation: '5.340'  },
-          {asset_id: 'BTC', value: 200, price_usd: 3000.00, volume_1hrs_usd: 3250, volume_1day_usd: 2900, variation: '5.340'  },
-          {asset_id: 'BTC', value: 200, price_usd: 3000.00, volume_1hrs_usd: 3250, volume_1day_usd: 2900, variation: '5.340'  },
-          {asset_id: 'BTC', value: 200, price_usd: 3000.00, volume_1hrs_usd: 3250, volume_1day_usd: 2900, variation: '5.340'  },
-          {asset_id: 'BTC', value: 200, price_usd: 3000.00, volume_1hrs_usd: 3250, volume_1day_usd: 2900, variation: '5.340'  },
-          {asset_id: 'BTC', value: 200, price_usd: 3000.00, volume_1hrs_usd: 3250, volume_1day_usd: 2900, variation: '5.340'  },
-          {asset_id: 'BTC', value: 200, price_usd: 3000.00, volume_1hrs_usd: 3250, volume_1day_usd: 2900, variation: '5.340'  },
-        ]
-
-        setCurrencies(data);
+        console.error(error);
       }
     };
 
@@ -86,8 +65,8 @@ const Header: React.FC<HeaderProps> = ({ navbar, login }) => {
         )}
       </div>
       {navbar && <Navbar navActive={navActive} />}      
-      <CarrouselCoin currencies={currencies} />
-      {!login && <LoginButtons />}   
+      {navbar && <CarrouselCoin currencies={currencies} />}
+      {!login && <LoginButtons />}  
       {login && <AvatarMenu />}        
     </header>
   );
