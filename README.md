@@ -44,4 +44,10 @@ O banco de dados pode ser visualizado no arquivo db.json, na raiz do projeto.
 
 ## API CoinAPI
 
-Para alterar a Key do CoinAPI basta, na raiz do projeto, acessar o arquivo .env.local e alterar o valor variável NEXT_PUBLIC_COINBASE_API_KEY.
+É necessário criar um arquivo chamado .env.local na raiz do projeto para adicionar a key da CoinAPI. Caso isso não seja feito, apenas dados mocados serão exibidos e algumas partes do site não serão executadas corretamente!
+
+Após criar o arquivo, adicione essa linha:
+
+NEXT_PUBLIC_COINBASE_API_KEY=7E85334A-D3CC-4BE1-BAD4-0AB96A405C78
+
+Não esqueça de substituir por uma Key Válida!!
