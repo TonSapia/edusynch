@@ -48,6 +48,6 @@ O banco de dados pode ser visualizado no arquivo db.json, na raiz do projeto.
 
 Após criar o arquivo, adicione essa linha:
 
-NEXT_PUBLIC_COINBASE_API_KEY=7E85334A-D3CC-4BE1-BAD4-0AB96A405C78
+NEXT_PUBLIC_COINBASE_API_KEY={api_key}
 
-Não esqueça de substituir por uma Key Válida!!
+Não esqueça de substituir {api_key} por uma Key Válida!!
