@@ -7,6 +7,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Chip from '@mui/material/Chip';
 import { getAssetsAPI } from '../../pages/api/coinbaseAPI';
+import Acordeon from "@/components/landpage/Acordeon";
 
 interface Asset {
   asset_id: string;
@@ -61,6 +62,10 @@ export default function TableSection() {
     setLessResults(true);  
     setLoadingResults(false);
   };
+
+  const getAcordeonBackgroundClass = (indice: number) => {
+    return indice % 2 === 0 ? 'acordeon-background-even' : 'acordeon-background-odd';
+  }
         
   return(
     <section id="table-section" className='table-section'>         
@@ -108,6 +113,31 @@ export default function TableSection() {
             </button>
           )}      
         </TableContainer>
+        <div className="acordeon-list">
+          <h1>Top Cryptos</h1>
+          {assets.map((acordeon, index) => (
+            <Acordeon 
+              key={index} 
+              classAcordeon={getAcordeonBackgroundClass(index)}
+              label={acordeon.asset_id}
+              name={acordeon.name}
+              crypto={acordeon.url_icon} 
+              price={acordeon.price_usd ? acordeon.price_usd.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) : "R$ 5,00"} 
+              change={(((acordeon.volume_1hrs_usd - acordeon.volume_1day_usd) / acordeon.volume_1day_usd)).toFixed(2)}
+            />
+          ))}
+          {moreResults && (
+            <button className='btn btn-link btn-link-table primary' onClick={loadMoreResults} disabled={loadingResults}>
+              {loadingResults ? 'Loading...' : 'View more +'}
+            </button>
+          )} 
+
+          {lessResults && (
+            <button className='btn btn-link btn-link-table primary' onClick={loadResults} >
+              View less +
+            </button>
+          )}   
+        </div>
     </section>
   );    
 }

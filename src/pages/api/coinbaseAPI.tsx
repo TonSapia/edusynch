@@ -127,7 +127,7 @@ export const getWalletAPI = async (user_id: number) => {
 
 export const getAssetsAPI = async (limit = 6, start = 0) => {
   try {
-    const assetsUrl = 'https://rest.coinapi.io/v1/assets';
+    const assetsUrl = 'https://rest.coinapi.io/v1/assets?filter_asset_id=BTC,ETH,XLM,XRP,ADA,EUR,JPY,CHF,SOL,USDC';
     const iconsUrl = `https://rest.coinapi.io/v1/assets/icons/32`;
     const assetsResponse = (await axios.get(assetsUrl, { 
       headers: { 'X-CoinAPI-Key': apiKey }
@@ -152,7 +152,7 @@ export const getAssetsAPI = async (limit = 6, start = 0) => {
 export const getCurrencyAPI = async () => {  
   try {
     const response = await axios.get<Currencies[]>(
-      'https://rest.coinapi.io/v1/assets?filter_asset_id=BTC,ETH,XLM,XRP,ADA,EUR,JPY,CHF,SEK,GBP',
+      'https://rest.coinapi.io/v1/assets?filter_asset_id=BTC,ETH,XLM,XRP,ADA,EUR,JPY,CHF,SOL,USDC',
       {
         headers: {
           'X-CoinAPI-Key': apiKey,

@@ -20,8 +20,6 @@
   .logo {        
     float: right;
   }
- 
-    
 }
 
 @media (max-width: 320px) {
@@ -30,7 +28,15 @@
 
 /* Mobile and Tablet */
 @media (min-width: 321px) and (max-width: 768px) {
-  
+  .footer {
+    .copyright {
+      display: none;
+    }
+
+    .logo {        
+      float: center;
+    }
+  }
 }
 
 @media (min-width: 768px) {

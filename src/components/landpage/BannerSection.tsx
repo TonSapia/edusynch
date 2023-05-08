@@ -53,9 +53,10 @@ export default function BannerSection() {
         title="Modal Title"
         message="Modal Message"
         primaryButtonText="OK"
-        primaryButtonAction={handleModalClose}
+        primaryButtonAction={"/dashboard"}
         secondaryButtonText="Cancel"
         secondaryButtonAction={handleModalClose}
+        type={'register'}
       />    
     </section>
   );

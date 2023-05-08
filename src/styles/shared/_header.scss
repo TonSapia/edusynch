@@ -13,6 +13,39 @@
   padding: 0px 10px 0px 10px;
   box-shadow: 0px 4px 8px rgba(77, 77, 77, 0.1);
 
+  .slick-slider {    
+    width: 300px;
+    margin: 0px auto;
+
+    .slick-track {
+
+      .slick-slide {
+        width: 250px !important;
+
+        .currency-item {
+          display: flex !important;
+          min-width: 200px;
+          font-size: 16px;                 
+          line-height: 50px;    
+          gap: 10px;   
+          color: $text-color; 
+
+          .variation {
+            .negative {
+              color: $danger;
+              font-size: 16px;    
+            }
+
+            .positive {
+              color: $success;
+              font-size: 16px;    
+            }
+          }        
+        }
+      }       
+    }
+  }
+
   .logo {
     grid-area: logo; 
     justify-self: start;
@@ -49,6 +82,10 @@
         .nav-list {
           list-style: none;
           min-width: 170px;
+
+          .login-hidden {
+            display: none;
+          }
 
           li {  
             &:last-child {
@@ -96,43 +133,6 @@
 
 }
 
-.header {  
-   
-  .slick-slider {    
-    width: 300px;
-    margin: 0px auto;
-
-    .slick-track {
-
-      .slick-slide {
-        width: 250px !important;
-
-        .currency-item {
-          display: flex !important;
-          min-width: 200px;
-          font-size: 16px;                 
-          line-height: 50px;    
-          gap: 10px;   
-          color: $text-color; 
-
-          .variation {
-            .negative {
-              color: $danger;
-              font-size: 16px;    
-            }
-
-            .positive {
-              color: $success;
-              font-size: 16px;    
-            }
-          }        
-        }
-      }       
-    }
-  }
-}
-
-
 @media (max-width: 320px) {
   .header {    
     max-width: 320px;
@@ -145,15 +145,89 @@
 
 /* Mobile and Tablet */
 @media (min-width: 321px) and (max-width: 768px) {
-  .header {   
+  .header {      
+    height: 100px;
+    top: 0;
+    width: 100%;
     max-width: 768px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "logo nav" "coin  coin";
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
 
-    .nav-menu-icon img {
-      float: right;
+    .logo {
+      grid-area: logo;
+      position: absolute;
+      float: left;
+      top: 0;
+      left: 0;
+      margin-top: 23px;
     }
 
-    .login-buttons, .slick-slider {
+    .carrousel-coin {    
+      grid-area: coin; 
+      width: 100%;
+      margin-top: 100px;
+      margin-bottom: 30px;
+    }      
+    
+    .nav-menu-icon img {
+      position: absolute;
+      float: right;
+      top: 0;
+      right: 0;
+      margin: 20px;
+    }
+
+    .login-menu {
       display: none;
+    }
+
+    .nav { 
+      .nav-menu-list {
+        top: 6.7rem;
+
+        .nav-menu {
+          .nav-list {
+            height: 210px; 
+
+            .login-hidden {
+              display: flex;
+              flex-direction: row;
+              flex-wrap: nowrap;
+              justify-content: center;
+              align-items: center;
+              gap: 30px;
+              height: 50px;              
+              
+              button {
+                color: $light;
+                font-size: 20px;
+                border: none;
+                background: transparent;
+              }
+            }
+            
+            li {
+              display: flex;
+              flex-direction: row;
+              flex-wrap: nowrap;
+              justify-content: center;
+              align-items: center;
+              gap: 30px;
+              height: 50px;
+              font-size: 20px;
+              
+              a {
+                color: $light;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
