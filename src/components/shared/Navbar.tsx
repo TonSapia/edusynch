@@ -2,7 +2,12 @@ import React, { useEffect } from 'react';
 import NavItem from './NavItem';
 import Modal from './Modal';
 
-const Navbar = ({ navActive }: { navActive: boolean }) => {
+interface Props {
+  navActive: boolean;
+  hidden: string;
+}
+
+const Navbar = ({ navActive, hidden }: Props) => {
   useEffect(() => {
     if (navActive) document.body.style.overflow = 'hidden';
     if (!navActive) document.body.style.overflow = 'auto';
@@ -26,18 +31,21 @@ const Navbar = ({ navActive }: { navActive: boolean }) => {
       <div className={`${navActive ? 'active' : ''} nav-menu-list`}>
         <div className='nav-menu'>
           <ul className='nav-list'>            
-            <li>
+            <li className={hidden}>
               <NavItem href="#" text="About us" />
             </li>   
-            <li>
+            <li className={hidden}>
               <NavItem href="#table-section" text="Top Cryptos" />
             </li> 
-            <li className="login-hidden">
+            <li className={`login-hidden ${hidden}`}>
               <button className="btn btn-link" onClick={() => handleModalOpen("login", "/dashboard")} >Sign in</button>     
             </li> 
-            <li className="login-hidden">
+            <li className={`login-hidden ${hidden}`}>
               <button className="btn btn-pry" onClick={() => handleModalOpen("register", "/dashboard")} >Sign up</button> 
-            </li>         
+            </li>   
+            <li className={`logout-hidden ${hidden}`}>
+              <NavItem href="/" text="Logout" /> 
+            </li>       
           </ul>
         </div>
       </div>

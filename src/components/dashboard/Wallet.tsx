@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -195,53 +196,94 @@ export default function Wallet() {
             <Chip className="chip" icon={<img src="assets/images/Z.svg"/>} label="My Wallet" />
             <button className="btn btn-pry" onClick={() => handleModalCryptoOpen()}>+ Add crypto</button>
           </div>
-          {dataWallet.length > 0 ? (
-            <TableContainer className="wallet-table">
-              <Table>
-                <TableHead>
-                  <TableRow>              
-                    <TableCell align='center'>#</TableCell>
-                    <TableCell align='center'>Crypto</TableCell>
-                    <TableCell align='center'>Holdings</TableCell>
-                    <TableCell align='center'>Change</TableCell>
-                    <TableCell align='center'>Trade</TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {dataWallet.map((row) => (
-                    <TableRow key={row.id}>
-                      <TableCell align='center'>{row.id}</TableCell>
-                      <TableCell align='center'><Chip className="chip-table" icon={<img src={row.url_icon}/>} label={row.name} /></TableCell>
-                      <TableCell align='center'>
-                        <div className="holdings">
-                          <p>US{(row.price_usd * row.quantity).toLocaleString('en-US', {style: 'currency', currency: 'USD'})}</p>
-                          <p className="quantity">{row.quantity} {row.asset_id}</p>
-                        </div>                        
-                      </TableCell>
-                      <TableCell align='center'>
+          <div className="table-wallet-container">
+            {dataWallet.length > 0 ? (
+              <TableContainer className="wallet-table">
+                <Table>
+                  <TableHead>
+                    <TableRow>              
+                      <TableCell align='center'>#</TableCell>
+                      <TableCell align='center'>Crypto</TableCell>
+                      <TableCell align='center'>Holdings</TableCell>
+                      <TableCell align='center'>Change</TableCell>
+                      <TableCell align='center'>Trade</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {dataWallet.map((row) => (
+                      <TableRow key={row.id}>
+                        <TableCell align='center'>{row.id}</TableCell>
+                        <TableCell align='center'><Chip className="chip-table" icon={<img src={row.url_icon}/>} label={row.name} /></TableCell>
+                        <TableCell align='center'>
+                          <div className="holdings">
+                            <p>US{(row.price_usd * row.quantity).toLocaleString('en-US', {style: 'currency', currency: 'USD'})}</p>
+                            <p className="quantity">{row.quantity} {row.asset_id}</p>
+                          </div>                        
+                        </TableCell>
+                        <TableCell align='center'>
+                          <label className={`${(((row.volume_1hrs_usd - row.volume_1day_usd) / (row.volume_1day_usd)) >= 0) ? "positive" : "negative"}`}>
+                            {((row.volume_1hrs_usd - row.volume_1day_usd) / (row.volume_1day_usd)) >= 0 ? 
+                              `+${(((row.volume_1hrs_usd - row.volume_1day_usd) / row.volume_1day_usd)).toFixed(2)}` : 
+                                  (((row.volume_1hrs_usd - row.volume_1day_usd) / row.volume_1day_usd)).toFixed(2)}%
+                          </label>
+                        </TableCell>
+                        <TableCell align='center'>
+                          <button className="btn" onClick={() => transferCrypto(row.asset_id, row.name, row.url_icon)}>
+                            <img src="assets/images/P.svg" /> 
+                          </button>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            ) : (
+              <div className="table-empty">
+                <img src="assets/images/N.svg" />
+                <h1>Nothing here yet...</h1>
+                <h3>Add a crypto and start earning</h3>
+              </div>            
+            )}
+
+          </div>
+
+          <div className="cards-list">
+            {dataWallet.length > 0 ? (
+              <div className="cards-wallet">
+                {dataWallet.map((row) => (
+                  <Card className="card-wallet"> 
+                    <CardContent className="text">
+                      <Chip className="chip-table" icon={<img src={row.url_icon}/>} label={row.name} />
+                      <div className="holdings">
+                        <p>Holdings</p>
+                        <p>US{(row.price_usd * row.quantity).toLocaleString('en-US', {style: 'currency', currency: 'USD'})}</p>
+                        <p className="quantity">{row.quantity} {row.asset_id}</p>
+                      </div> 
+                      <div className="change">
+                        <p>change</p>
                         <label className={`${(((row.volume_1hrs_usd - row.volume_1day_usd) / (row.volume_1day_usd)) >= 0) ? "positive" : "negative"}`}>
                           {((row.volume_1hrs_usd - row.volume_1day_usd) / (row.volume_1day_usd)) >= 0 ? 
                             `+${(((row.volume_1hrs_usd - row.volume_1day_usd) / row.volume_1day_usd)).toFixed(2)}` : 
                                 (((row.volume_1hrs_usd - row.volume_1day_usd) / row.volume_1day_usd)).toFixed(2)}%
                         </label>
-                      </TableCell>
-                      <TableCell align='center'>
-                        <button className="btn" onClick={() => transferCrypto(row.asset_id, row.name, row.url_icon)}>
-                          <img src="assets/images/P.svg" /> 
-                        </button>
-                      </TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </TableContainer>
-          ) : (
-            <div className="table-empty">
-              <img src="assets/images/N.svg" />
-              <h1>Nothing here yet...</h1>
-              <h3>Add a crypto and start earning</h3>
-            </div>            
-          )}
+                      </div> 
+                    </CardContent> 
+                    <CardActions>
+                      <button className="btn btn-pry" onClick={() => transferCrypto(row.asset_id, row.name, row.url_icon)}>
+                        Trade 
+                      </button>
+                    </CardActions>             
+                  </Card>
+                ))}
+              </div>
+            ) : (
+              <div className="table-empty">
+                <img src="assets/images/N.svg" />
+                <h1>Nothing here yet...</h1>
+                <h3>Add a crypto and start earning</h3>
+              </div>            
+            )}
+          </div>
         </div>   
         <Modal
           open={modalCryptoOpen}

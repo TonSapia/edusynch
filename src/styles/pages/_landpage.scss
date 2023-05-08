@@ -342,11 +342,33 @@
 }
 
 /* Mobile and Tablet */
-@media (min-width: 321px) and (max-width: 768px) {
+@media (min-width: 321px) and (max-width: 768px) {  
+
   .landpage {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+
+    .header {
+      .nav {
+        display: initial !important;
+  
+        .landpage-hidden {
+          display: flex !important;
+          flex-direction: row !important;
+          flex-wrap: nowrap !important;
+          justify-content: center !important;
+          align-items: center;
+          gap: 30px !important;
+          height: 50px !important;
+          font-size: 20px !important;
+        }
+  
+        .landpage-hidden.logout-hidden {
+          display: none !important;
+        }
+      }
+    }
 
     .banner-section {
       width: 100%;

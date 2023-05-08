@@ -11,7 +11,7 @@ export default class Home extends Component {
   render() {
     return (
       <div className="landpage">
-        <Header navbar={true} login={false} />
+        <Header hidden={"landpage-hidden"} login={false} />
         <BannerSection />
         <CardsSection />
         <TableSection />

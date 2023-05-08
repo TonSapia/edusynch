@@ -17,11 +17,11 @@ interface Currencies {
 }
 
 interface HeaderProps {
-  navbar: boolean;
+  hidden: string;
   login: boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({ navbar, login }) => {
+const Header: React.FC<HeaderProps> = ({ hidden, login }) => {
 
 
   const [navActive, setNavActive] = useState(false);
@@ -64,8 +64,8 @@ const Header: React.FC<HeaderProps> = ({ navbar, login }) => {
           <Image src='assets/shared/mobile/hamburger-menu.svg' alt='close menu' height={34} width={34} />
         )}
       </div>
-      {navbar && <Navbar navActive={navActive} />}      
-      {navbar && <CarrouselCoin currencies={currencies} />}
+      <Navbar hidden={hidden} navActive={navActive} />      
+      <CarrouselCoin currencies={currencies} />
       {!login && <LoginButtons />}  
       {login && <AvatarMenu />}        
     </header>

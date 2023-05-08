@@ -87,6 +87,10 @@
             display: none;
           }
 
+          .logout-hidden {
+            display: none;
+          }
+
           li {  
             &:last-child {
               margin-bottom: 0;

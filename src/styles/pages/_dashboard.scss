@@ -1,5 +1,15 @@
 .dashboard {  
 
+  .header {
+    .nav {
+      display: none;
+    }
+
+    .carrousel-coin {
+      display: none;
+    }
+  }
+
   .wallet-section {      
     display: flex;       
 
@@ -190,6 +200,10 @@
           box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
           border-radius: 8px;
 
+          .cards-list {
+            display: none;
+          }
+
           .wallet-menu-table {
             box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
@@ -270,4 +284,298 @@
       }
     }      
   }
+}
+
+
+/* Mobile */
+@media (max-width: 320px) {
+ 
+ 
+}
+
+/* Mobile and Tablet */
+@media (min-width: 321px) and (max-width: 768px) {
+
+  .dashboard {
+    .header {
+      height: 75px;
+      box-shadow: 0px 4px 8px rgba(77, 77, 77, 0.1);
+      margin-bottom: 20px;
+
+      .nav {
+        display: initial !important;   
+        
+        .nav-menu-list {
+          top: 4.7rem;
+
+          .nav-menu {
+            height: 50px;
+          }
+        }
+  
+        .dashboard-hidden {
+          display: none !important;
+        }
+  
+        .logout-hidden.logout-hidden {
+          display: flex !important;
+          flex-direction: row !important;
+          flex-wrap: nowrap !important;
+          justify-content: center !important;
+          align-items: center;
+          gap: 30px !important;
+          height: 50px !important;
+          font-size: 20px !important;
+        }
+      }
+    }
+  
+    .wallet-section {
+      display: flex;
+      width: 100%;
+      margin: 0px;
+      padding: 0px;
+  
+      .side-menu{
+        display: none !important;
+      }
+  
+      .wallet-container {
+        display: flex !important;
+        width: 100% !important;
+        margin: 0px !important;
+        padding: 0px !important;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+        flex-direction: column;
+  
+        .wallet {
+          display: grid !important;
+          grid-template-columns: 50% 50% !important;
+          grid-template-areas: 'balance balance' 'variation news' 'myWallet myWallet' !important;
+          margin: 0px !important;
+          padding: 0px !important;
+  
+          .balance {
+            display: flex !important;
+            grid-area: balance !important; 
+            width: 100% !important;
+            margin: 0px !important;
+            padding: 0px !important;
+  
+            .image {
+              width: 10% !important;
+              img {
+                width: 45px;
+              }
+            }
+  
+            .text {
+              width: 45% !important;           
+  
+              h5 {
+                font-size: 16px;
+              }
+             
+            }
+  
+            .value {
+              width: 45% !important;
+  
+              h3 {
+                font-size: 20px;
+              }
+            }
+          }
+  
+          .variation {
+            display: flex !important;
+            grid-area: variation !important; 
+            width: 100% !important;
+            margin: 0px !important;
+            padding: 0px !important;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            align-items: stretch;
+  
+            p:nth-child(1) {
+              margin-top: 10px;           
+            }  
+            
+            .chip-variation { 
+              margin-right: 73px;
+            }
+  
+            p:nth-child(3) {
+              margin-top: -38px;
+              margin-left: 6pc;
+              color: $success;
+            }   
+            
+            .image {
+              height: 100%;
+              width: 100%;
+            }
+          }
+  
+          .news {
+            display: flex !important;
+            grid-area: news !important; 
+            width: 100% !important;
+            margin: 0px !important;
+            padding: 0px !important;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: flex-start;
+            align-items: stretch;
+            height: 250px;          
+  
+            .text {
+              
+  
+              h5 {
+                width: 100%;
+                text-align: left;
+                font-size: 16px;
+              }
+  
+              p {
+                width: 100%;
+                text-align: left;
+                font-size: 16px;
+              }
+  
+              a {
+                display: none;
+              }
+            }
+  
+            .image {
+              height: 100%;
+            }
+          }
+  
+          .my-wallet {
+            grid-area: myWallet !important; 
+            width: 100% !important;
+            margin: 0px !important;    
+            display: grid !important;     
+            grid-template-columns: 100% !important;
+            grid-template-areas: 'table' 'empty' !important;
+            margin: 0px !important;
+            padding: 0px !important;
+            margin-bottom: 20px  !important;
+
+            .table-wallet-container {
+              display: none;
+            }
+
+            .cards-list {
+              display: flex;
+              flex-direction: row;
+              flex-wrap: nowrap;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+
+              .cards-wallet {
+                display: flex;    
+                flex-wrap: wrap;           
+                align-content: center;
+                justify-content: center;
+                align-items: center;
+                justify-items: center;
+                width: 100%;
+
+                .card-wallet {
+                  width: 40%;
+                  margin: 10px;
+                  float: left;
+                  grid-area: card !important; 
+
+                  .text {
+                    padding: 0px;
+
+                    .chip-table {
+                      height: 50px;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      flex-wrap: nowrap;
+                      flex-direction: row;
+                      width: 100%;
+                      background-color: $primary-step-100;
+                      margin-bottom: 20px;
+                    }
+  
+                    .holdings {
+                      margin: 10px;
+                      margin-bottom: 20px;
+                      
+                      .quantity {
+                        color: $primary;
+                      }
+                    }
+  
+                    .change {
+                      margin: 10px; 
+
+                      .negative {
+                        color: $danger;
+                        font-size: 16px;    
+                      }
+          
+                      .positive {
+                        color: $success;
+                        font-size: 16px;    
+                      }
+                    }
+  
+                  }                 
+                }
+              }              
+            }
+  
+            .wallet-menu-table {
+              grid-area: table !important; 
+              border: none;
+              margin: 0px !important;
+              box-shadow: none !important;
+  
+              button {
+                margin-top: -60px !important;
+                margin-right: 10px !important;
+              }
+            }
+  
+            .table-empty {
+              grid-area: empty !important; 
+              margin: 0px !important;
+              gap: 0px !important;
+              margin-bottom: 20px  !important;
+  
+              img {
+                width: 100px !important;
+              }
+  
+              h1 {
+                font-size: 24px;
+                margin: 0px !important;
+              }
+  
+              h3 {
+                font-size: 20px;
+                color: $text-color;
+                margin: 0px !important;
+                margin-bottom: 40px  !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }  
 }

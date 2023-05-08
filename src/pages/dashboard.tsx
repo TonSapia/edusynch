@@ -8,7 +8,7 @@ export default class Dashboard extends Component {
   render() {
     return (
       <div className="dashboard">
-        <Header navbar={false} login={true} />        
+        <Header hidden={"dashboard-hidden"} login={true} />        
         <WalletSection />
         <Footer />
       </div>      
