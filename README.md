@@ -1,4 +1,4 @@
-Olá, seja bem vindo!! \{^_^}/ 
+Olá, seja bem vindo!! \ {^_^} / 
 
 Este projeto utiliza [Next.js](https://nextjs.org/)!!
 
