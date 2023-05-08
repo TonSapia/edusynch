@@ -2,7 +2,6 @@ Olá, seja bem vindo!! \{^_^}/
 
 Este projeto utiliza [Next.js](https://nextjs.org/)!!
 
-
 ## Instalação
 
 Faça o download do node [Nodejs](https://nodejs.org/en/download)
@@ -39,6 +38,9 @@ Abra em seu navegador [http://localhost:3000](http://localhost:3000) para acessa
 
 Para acessar a Fake API basta acessar [http://localhost:3030](http://localhost:3030) em seu navegador.
 
+As rotas da API são: /users, /results, /currencies, /wallet 
+
+O banco de dados pode ser visualizado no arquivo db.json, na raiz do projeto.
 
 ## API CoinAPI
 
