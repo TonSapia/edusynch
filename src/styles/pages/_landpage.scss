@@ -349,6 +349,16 @@
     flex-direction: column;
     flex-wrap: wrap;
 
+    .table-section {      
+      .acordeon-list {        
+        .btn-link-table {
+          width: 200px;
+          height: 32px;
+          font-size: 16px;
+        }
+      }
+    }
+
     .header {
       .nav {
         display: initial !important;
@@ -603,7 +613,8 @@
 }
 
 @media (min-width: 768px) and (max-width: 983px) {
-  .landpage {
+  .landpage {   
+
     .header {      
       display: grid;
       grid-template-columns: 33% 33% 33%;
@@ -651,7 +662,7 @@
       .grid-waves {
 
       }
-    }
+    }    
 
     .cards-section {
       display: grid;
