@@ -31,6 +31,7 @@ class SelectInput extends React.Component<Props, State> {
   handleSelectChange(event: React.ChangeEvent<HTMLInputElement>) {
     const selectValue = event.target.value;
 
+    /** Realiza verificação do input */
     if (!selectValue) {
       this.setState({ selectError: 'Select an option' });
     } else {

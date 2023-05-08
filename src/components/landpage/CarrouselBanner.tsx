@@ -6,9 +6,9 @@ interface CarouselProps {
 
 const CarrouselBanner: React.FC<CarouselProps> = ({ slides }) => {
   const [activeSlide, setActiveSlide] = useState<number>(0);
-  
-
+    
   useEffect(() => {
+    /** Realiza a mudança de slide através do Scroll */
     const handleScroll = (event: Event) => {
       const delta = Math.sign((event as WheelEvent).deltaY);
       setActiveSlide((prevSlide) => {

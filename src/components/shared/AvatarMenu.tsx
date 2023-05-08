@@ -51,6 +51,7 @@ export default function AvatarMenu() {
     loadUser();
   }, []);
 
+  /** Carrega as informações do usuário */
   const loadUser = async () => {
     try {      
       const response = await getUserAPI(1);

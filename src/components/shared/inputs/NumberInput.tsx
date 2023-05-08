@@ -22,6 +22,7 @@ class NumberInput extends React.Component<Props, State> {
     this.handleNumberChange = this.handleNumberChange.bind(this);
   }
 
+  /** Realiza verificação do input */
   handleNumberChange(event: React.ChangeEvent<HTMLInputElement>) {
     const numberValue = parseInt(event.target.value);
 

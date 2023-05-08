@@ -26,6 +26,7 @@ class EmailInput extends React.Component<Props, State> {
     const email = event.target.value;
     const isValidEmail = validator.validate(email);
 
+    /** Realiza verificação do input */
     if (!isValidEmail) {
       this.setState({ emailError: 'Invalid email address' });
     } else {

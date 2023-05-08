@@ -72,6 +72,7 @@ export default function Wallet() {
     }
   };
 
+  /** Adiciona um novo item na tabela */ 
   const handleAdd = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
 
@@ -81,6 +82,7 @@ export default function Wallet() {
     const inputNumber = document.querySelector<HTMLInputElement>('.MuiInputBase-inputAdornedStart');
     const valorNumber = inputNumber?.valueAsNumber;
 
+    /** Verifica se os campos foram preenchidos */ 
     if(selectedOption && valorNumber) {
       const newDataTable = {
         id: dataWallet.length + 1,
@@ -105,6 +107,7 @@ export default function Wallet() {
       setWallet(newData);
 
       try { 
+        /** Faz a chamada da API para inserir um novo dado na tabela caso os dados existam */ 
         if(wallet != undefined) {
           const response = await addToWallet(wallet);
           setWalletData([...dataWallet, newDataTable]);
@@ -117,6 +120,7 @@ export default function Wallet() {
     }       
   };
 
+  /** Seta os dados relevantes para o modal */
   const transferCrypto = async (id: string, name: string, img: string) => {     
     setNameCrypto(name);      
     setIconCrypto(img); 
@@ -124,6 +128,7 @@ export default function Wallet() {
     handleModalTransferOpen();
   }
 
+  /** Remove 1 item da tabela */
   const handleDelete = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
 
@@ -136,6 +141,7 @@ export default function Wallet() {
     const inputHidden = document.querySelector<HTMLInputElement>('.id_crypto');
     const valorHidden = inputHidden?.value;
 
+    /** Verifica se os campos foram preenchidos e executa a remoção dos dados na API */
     if(selectedOption && valorNumber && valorHidden) {
       try { 
         const response = await removeFromWallet(1, valorHidden, valorNumber);

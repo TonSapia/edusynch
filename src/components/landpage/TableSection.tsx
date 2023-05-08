@@ -39,6 +39,7 @@ export default function TableSection() {
     loadResults();
   }, []);
 
+  /** Carrega os resultados da tabela via API */
   const loadResults = async () => {
     setLoadingResults(true);
 
@@ -55,6 +56,7 @@ export default function TableSection() {
     setLoadingResults(false);
   };
 
+  /** Carrega mais resultados na tabela */
   const loadMoreResults = async () => {
     setLoadingResults(true);
     setAssets([...assets, ...results]);

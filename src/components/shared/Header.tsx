@@ -28,6 +28,7 @@ const Header: React.FC<HeaderProps> = ({ hidden, login }) => {
   const [currencies, setCurrencies] = useState<Currencies[]>([]);
 
   useEffect(() => {
+    /** Requisita os dados para o carousel via API  */
     const getCurrencies = async () => {
       try {
         const response = await getCurrencyAPI();

@@ -35,6 +35,7 @@ class PasswordInput extends React.Component<Props, State> {
     const password = event.target.value;
     const isValidPassword = password.length >= 8;
 
+    /** Realiza verificação do input */
     if (!isValidPassword) {
       this.setState({ passwordError: 'Invalid password (minimum 8 characters)' });
     } else {
@@ -44,6 +45,7 @@ class PasswordInput extends React.Component<Props, State> {
     this.setState({ password });
   }
 
+  /** Exibe o password do usuário */
   handleClickShowPassword(event: React.MouseEvent<HTMLButtonElement>) {
     event.preventDefault();
     this.setState((prevState) => ({
@@ -55,6 +57,7 @@ class PasswordInput extends React.Component<Props, State> {
     event.preventDefault();
   }
 
+  /** Confirma se as senhas são iguais */
   handleConfirmPasswordChange(event: React.ChangeEvent<HTMLInputElement>) {
     const confirmPassword = event.target.value;
 

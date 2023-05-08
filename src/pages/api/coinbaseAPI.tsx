@@ -124,7 +124,6 @@ export const getWalletAPI = async (user_id: number) => {
   }   
 }
 
-
 export const getAssetsAPI = async (limit = 6, start = 0) => {
   try {
     const assetsUrl = 'https://rest.coinapi.io/v1/assets?filter_asset_id=BTC,ETH,XLM,XRP,ADA,EUR,JPY,CHF,SOL,USDC';

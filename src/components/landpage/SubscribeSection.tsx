@@ -14,6 +14,7 @@ export default function SubscribeSection() {
     setIsButtonDisabled(!isEmailValid);
   };
 
+  /** Realiza a simulação de uma subscrição */
   const subscribe = async () => {
     setLoadingResults(true);
     setIsInputDisabled(true);

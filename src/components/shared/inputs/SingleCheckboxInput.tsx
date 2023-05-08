@@ -19,6 +19,7 @@ class SingleCheckboxInput extends React.Component<Props, State> {
     this.handleTermsChange = this.handleTermsChange.bind(this);
   }
 
+  /** Executa a mudança de estado do input */
   handleTermsChange(event: React.ChangeEvent<HTMLInputElement>) {
     const accepted = event.target.checked;
     this.setState({ accepted });

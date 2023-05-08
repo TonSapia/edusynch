@@ -16,12 +16,14 @@ const Navbar = ({ navActive, hidden }: Props) => {
   const [type, setType] = React.useState('');
   const [pathName, setPathName] = React.useState('');
 
+  /** Realiza a abertura do modal */
   const handleModalOpen = (modal: string, pathName: string) => {
     setType(modal);
     setPathName(pathName);
     setModalOpen(true);
   };
 
+  /** Realiza o fechamento do modal */
   const handleModalClose = () => {
     setModalOpen(false);
   };

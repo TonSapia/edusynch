@@ -21,6 +21,7 @@ class NameInput extends React.Component<Props, State> {
     this.handleNameChange = this.handleNameChange.bind(this);
   }
 
+  /** Realiza verificação do input */
   handleNameChange(event: React.ChangeEvent<HTMLInputElement>) {
     const name = event.target.value;
 

@@ -603,3 +603,108 @@
 
   }
 }
+
+@media (min-width: 768px) and (max-width: 983px) {
+  .landpage {
+    .header {      
+      display: grid;
+      grid-template-columns: 33% 33% 33%;
+      grid-template-areas: "logo nav login" "coin coin coin";
+      align-content: center;
+      justify-content: space-between;
+      justify-items: stretch;
+      align-items: center;
+      padding-top: 10px;
+      height: 100px;
+
+      .logo {
+        grid-area: logo; 
+      }
+
+      .nav {
+        grid-area: nav; 
+      }
+
+      .slick-slider { 
+        grid-area: coin; 
+        width: 100%;
+        height: 50px;
+        margin-top: 0px;
+      }
+
+      .login-menu {
+        display: flex;
+        justify-self: unset;
+        grid-area: login;
+        justify-content: flex-end;  
+        padding-right: 30px;      
+      }
+    }
+
+    .banner-section {
+      .grid-text {        
+        align-items: flex-start;
+      }
+
+      .grid-image {
+        margin-left: 0px;
+      }
+
+      .grid-waves {
+
+      }
+    }
+
+    .cards-section {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-areas: "text" "cards";
+
+      .grid-cards {
+        display: flex;
+        width: 100%;
+        grid-area: cards; 
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 100px;
+        margin-top: 20px;
+      }
+
+      .grid-text {
+        display: flex;
+        grid-area: text; 
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        margin-bottom: 60px;
+
+        .content {
+          width: 50%;
+          margin: 0px auto;
+          text-align: center;
+
+          button {
+            margin: 0px auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media (min-width: 984px) and (max-width: 1440px) {
+  .landpage {
+    .header {   
+      
+      .login-menu {
+        justify-self: unset;
+        margin-left: 95%;
+      }
+    }
+  }
+}
