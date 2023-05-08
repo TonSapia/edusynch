@@ -21,6 +21,35 @@ interface Asset {
   url_icon: string;
 }
 
+interface myWallet {
+  id: number;
+  name: string;
+  user_id: number;
+  asset_id: string;  
+  quantity: number;
+  price_usd: number;
+  volume_1hrs_usd: number;
+  volume_1day_usd: number;
+  url_icon: string;
+}
+
+interface Wallet {
+  id: number;
+  name: string;
+  user_id: number;
+  asset_id: string;  
+  quantity: number;  
+  url_icon: string;
+}
+
+interface PostWallet {
+  name: string;
+  user_id: number;
+  asset_id: string;  
+  quantity: number;  
+  url_icon: string;
+}
+
 interface Currencies { 
   asset_id: string;  
   value: number;
@@ -28,6 +57,71 @@ interface Currencies {
   volume_1hrs_usd: number;
   volume_1day_usd: number;
   variation: string;  
+}
+
+export const removeFromWallet = async (id: number, asset_id: string, quantity: number) => {
+  const responseWallet = await axios.get<Wallet[]>(`http://localhost:3030/wallet?user_id=${id}&asset_id=${asset_id}`, {});   
+  const quantityOld = responseWallet.data[0].quantity;
+  const idWallet = responseWallet.data[0].id;
+  const quantityNew = quantityOld - quantity;
+  if (quantityNew > 0) {
+    const response = await axios.patch(`http://localhost:3030/wallet/${idWallet}`, { quantity: quantityNew });
+    return response.data;
+  } else {
+    const response = await axios.delete(`http://localhost:3030/wallet/${idWallet}`);
+    return response.data;
+  }
+};
+
+export const addToWallet = async (newCrypto: PostWallet) => {
+  const responseWallet = await axios.get<Wallet[]>(`http://localhost:3030/wallet?user_id=${newCrypto.user_id}&asset_id=${newCrypto.asset_id}`, {});   
+  
+  if (responseWallet.data && responseWallet.data.length > 0) {
+    const id = responseWallet.data[0].id;
+    const quantity = responseWallet.data[0].quantity;
+    const response = await axios.patch(`http://localhost:3030/wallet/${id}`, { quantity: (quantity + newCrypto.quantity) });
+    return response.data;
+  } else {
+    const response = await axios.post<PostWallet>(`http://localhost:3030/wallet/`, newCrypto);
+    return response.data;
+  } 
+};
+
+export const getWalletAPI = async (user_id: number) => {
+  const dataMyWallet: myWallet[] = [];
+
+  try {
+    const responseAssets = await axios.get<Asset[]>(
+      'https://rest.coinapi.io/v1/assets?filter_asset_id=BTC,ETH,ADA,SOL,USDC',
+      {
+        headers: {
+          'X-CoinAPI-Key': apiKey,
+        },
+      }
+    );
+
+    const responseWallet = await axios.get<Wallet[]>(`http://localhost:3030/wallet?user_id=${user_id}`, {});    
+    
+    responseWallet.data.forEach((wallet) => {
+      dataMyWallet.push({
+        id: wallet.id,
+        user_id: wallet.user_id,
+        name: wallet.name,
+        asset_id: wallet.asset_id,  
+        quantity: wallet.quantity,
+        price_usd: Number(responseAssets.data.filter((e: Asset) => e.asset_id.includes(wallet.asset_id)).map((asset: any) => asset.price_usd)),
+        volume_1hrs_usd: Number(responseAssets.data.filter((e: Asset) => e.asset_id.includes(wallet.asset_id)).map((asset: any) => asset.volume_1hrs_usd)),
+        volume_1day_usd: Number(responseAssets.data.filter((e: Asset) => e.asset_id.includes(wallet.asset_id)).map((asset: any) => asset.volume_1day_usd)),
+        url_icon: wallet.url_icon
+      });
+    });   
+
+    return dataMyWallet;
+
+  } catch (error) {    
+    console.log(error);
+    return dataMyWallet;
+  }   
 }
 
 

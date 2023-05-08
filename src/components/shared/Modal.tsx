@@ -3,20 +3,30 @@ import { Modal, Box } from '@mui/material';
 import NameInput from './inputs/NameInput';
 import EmailInput from './inputs/EmailInput';
 import PasswordInput from './inputs/PasswordInput';
+import NumberInput from './inputs/NumberInput';
+import SelectInput from './inputs/SelectInput';
 import SingleCheckboxInput from './inputs/SingleCheckboxInput';
 import { Close as CloseIcon } from '@material-ui/icons';
+import { Option } from "../shared/inputs/SelectInput";
 import Link from 'next/link';
 
 interface IModalProps {
   open: boolean;
   onClose: () => void;
   title: string;
-  message: string;
+  message?: string;
+  hidden?: string;
+  icon?: string;
   primaryButtonText?: string;
-  primaryButtonAction: string;
+  primaryButtonAction?: string;
   secondaryButtonText?: string;
   secondaryButtonAction?: () => void;
+  tertiaryButtonText?: string;
+  tertiaryButtonAction?: (event: React.MouseEvent<HTMLButtonElement>) => Promise<void>;
+  quaternaryButtonText?: string;
+  quaternaryButtonAction?: () => void;
   type: string;
+  options?: Option[];
 }
 
 const SharedModal: React.FC<IModalProps> = ({
@@ -24,11 +34,18 @@ const SharedModal: React.FC<IModalProps> = ({
   onClose,
   title,
   message,
+  hidden,
+  icon,
   primaryButtonText,
   primaryButtonAction,
   secondaryButtonText,
   secondaryButtonAction,
+  tertiaryButtonText,
+  tertiaryButtonAction,  
+  quaternaryButtonText,
+  quaternaryButtonAction,
   type,
+  options
 }) => {
   const [typeModal, setTypeModal] = useState<string>(type);
 
@@ -52,7 +69,7 @@ const SharedModal: React.FC<IModalProps> = ({
           </button>
         </div>
 
-        {((type == "login" && !typeModal) || typeModal == "login") && 
+        {((type == "login" && !typeModal && primaryButtonAction) || (typeModal == "login" && primaryButtonAction)) && 
           <div className="login-modal">
             <h5>Sign in to <span className="coin">Coin</span><span className="synch">Synch</span></h5> 
             <form>               
@@ -63,7 +80,7 @@ const SharedModal: React.FC<IModalProps> = ({
                 <a href="#">Forgot password?</a>
               </div>
 
-              <div className="form-group">
+              <div className="form-group">               
                 <Link className="btn-pry submit" href={primaryButtonAction}>Sign in</Link>
               </div>    
 
@@ -92,7 +109,37 @@ const SharedModal: React.FC<IModalProps> = ({
               </div>        
             </form>
           </div>
-        }         
+        }   
+
+        {(type == "crypto" && options) && 
+          <div className="crypto-modal">
+            <h5>Add Crypto</h5> 
+            <form>  
+              <SelectInput label="Crypto" options={options} required={true} /> 
+              <NumberInput label="Value" required={true} />               
+              
+              <div className="form-group">                
+                <button onClick={tertiaryButtonAction} className="btn-pry submit">Add Crypto</button>
+              </div>  
+            </form>
+          </div>
+        }    
+
+        {(type == "transfer" && options && icon) && 
+          <div className="transfer-modal">
+            <h5>Transfer Crypto</h5> 
+            <p><label>You are transfering</label><img src={icon}/><b>{title}</b></p>
+            <form>  
+              <SelectInput label="Select Transfer" options={options} required={true} /> 
+              <NumberInput label="Quantity" required={true} />   
+              <input className="id_crypto" type="hidden" value={hidden} />            
+             
+              <div className="form-group">                
+                <button onClick={tertiaryButtonAction} className="btn-pry submit">Add Crypto</button>
+              </div>  
+            </form>
+          </div>
+        }     
       </Box>
     </Modal>
   );

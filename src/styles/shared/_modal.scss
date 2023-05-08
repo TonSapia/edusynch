@@ -58,8 +58,27 @@
         input[type="password"] {          
           height: 38px;
           border-right: none;
+          padding: 10px;
         }
 
+        input[type="select"] {          
+          height: 38px;
+          border-right: none; 
+        }
+
+        .selectOption {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: flex-start;
+          align-items: stretch;
+          gap: 20px;
+
+          label {
+            margin-top: 10px;
+          }
+        }
+       
         .submit {
           display: flex;
           flex-direction: row;
@@ -103,6 +122,45 @@
 
       h5 {
         text-align: center;
+      }
+    }
+
+    .crypto-modal {
+      display: flex;
+      gap: 30px;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+
+      h5 {
+        text-align: center;
+      }
+    }
+
+    .transfer-modal {
+      display: flex;
+      gap: 30px;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+
+      h5 {
+        text-align: center;
+      }
+
+      p {
+        display: flex;
+        gap: 10px;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+
+        label {
+          margin-right: 20px;
+        }
       }
     }
   }

@@ -132,3 +132,13 @@ a:hover {
 .primary {
   color: $primary;
 }
+
+.selectOption {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  
+  label {
+    margin-top: 10px;
+  }
+}

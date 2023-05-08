@@ -13,37 +13,212 @@
       "img": "assets/images/avatar.svg"
     }
   ],
-
   "results": [
-    { "id": 1, "crypto": "BITCOIN", "price": 3000.00, "volume_1hrs_usd": 3001, "volume_1day_usd": 2500, "link": "assets/images/ETH.svg"},  
-    { "id": 2, "crypto": "BITCOIN", "price": 3000.00, "volume_1hrs_usd": 3001, "volume_1day_usd": 4000, "link": "assets/images/ETH.svg" },
-    { "id": 3, "crypto": "BITCOIN", "price": 3000.00, "volume_1hrs_usd": 3001, "volume_1day_usd": 2999, "link": "assets/images/ETH.svg" },
-    { "id": 4, "crypto": "BITCOIN", "price": 3000.00, "volume_1hrs_usd": 3001, "volume_1day_usd": 1000, "link": "assets/images/ETH.svg" },
-    { "id": 5, "crypto": "BITCOIN", "price": 3000.00, "volume_1hrs_usd": 3001, "volume_1day_usd": 500, "link": "assets/images/ETH.svg" },
-    { "id": 6, "crypto": "BITCOIN", "price": 3000.00, "volume_1hrs_usd": 3001, "volume_1day_usd": 5000, "link": "assets/images/ETH.svg" },
-    { "id": 7, "crypto": "BITCOIN", "price": 3000.00, "volume_1hrs_usd": 3001, "volume_1day_usd": 8000, "link": "assets/images/ETH.svg" },
-    { "id": 8, "crypto": "BITCOIN", "price": 3000.00, "volume_1hrs_usd": 3001, "volume_1day_usd": 300, "link": "assets/images/ETH.svg" },
-    { "id": 9, "crypto": "BITCOIN", "price": 3000.00, "volume_1hrs_usd": 3001, "volume_1day_usd": 2700, "link": "assets/images/ETH.svg" },
-    { "id": 10, "crypto": "BITCOIN", "price": 3000.00, "volume_1hrs_usd": 3001, "volume_1day_usd": 3700, "link": "assets/images/ETH.svg" }
+    {
+      "id": 1,
+      "crypto": "BITCOIN",
+      "price": 3000,
+      "volume_1hrs_usd": 3001,
+      "volume_1day_usd": 2500,
+      "link": "assets/images/ETH.svg"
+    },
+    {
+      "id": 2,
+      "crypto": "BITCOIN",
+      "price": 3000,
+      "volume_1hrs_usd": 3001,
+      "volume_1day_usd": 4000,
+      "link": "assets/images/ETH.svg"
+    },
+    {
+      "id": 3,
+      "crypto": "BITCOIN",
+      "price": 3000,
+      "volume_1hrs_usd": 3001,
+      "volume_1day_usd": 2999,
+      "link": "assets/images/ETH.svg"
+    },
+    {
+      "id": 4,
+      "crypto": "BITCOIN",
+      "price": 3000,
+      "volume_1hrs_usd": 3001,
+      "volume_1day_usd": 1000,
+      "link": "assets/images/ETH.svg"
+    },
+    {
+      "id": 5,
+      "crypto": "BITCOIN",
+      "price": 3000,
+      "volume_1hrs_usd": 3001,
+      "volume_1day_usd": 500,
+      "link": "assets/images/ETH.svg"
+    },
+    {
+      "id": 6,
+      "crypto": "BITCOIN",
+      "price": 3000,
+      "volume_1hrs_usd": 3001,
+      "volume_1day_usd": 5000,
+      "link": "assets/images/ETH.svg"
+    },
+    {
+      "id": 7,
+      "crypto": "BITCOIN",
+      "price": 3000,
+      "volume_1hrs_usd": 3001,
+      "volume_1day_usd": 8000,
+      "link": "assets/images/ETH.svg"
+    },
+    {
+      "id": 8,
+      "crypto": "BITCOIN",
+      "price": 3000,
+      "volume_1hrs_usd": 3001,
+      "volume_1day_usd": 300,
+      "link": "assets/images/ETH.svg"
+    },
+    {
+      "id": 9,
+      "crypto": "BITCOIN",
+      "price": 3000,
+      "volume_1hrs_usd": 3001,
+      "volume_1day_usd": 2700,
+      "link": "assets/images/ETH.svg"
+    },
+    {
+      "id": 10,
+      "crypto": "BITCOIN",
+      "price": 3000,
+      "volume_1hrs_usd": 3001,
+      "volume_1day_usd": 3700,
+      "link": "assets/images/ETH.svg"
+    }
   ],
-
   "currencies": [
-    { "asset_id": "BTC", "value": 200, "price_usd": 3000.00, "volume_1hrs_usd": 3250, "volume_1day_usd": 2900, "variation": "5.340", "url_icon": "assets/images/ETH.svg"  },
-    { "asset_id": "BTC", "value": 200, "price_usd": 3000.00, "volume_1hrs_usd": 3250, "volume_1day_usd": 2900, "variation": "5.340", "url_icon": "assets/images/ETH.svg"  },
-    { "asset_id": "BTC", "value": 200, "price_usd": 3000.00, "volume_1hrs_usd": 3250, "volume_1day_usd": 2900, "variation": "5.340", "url_icon": "assets/images/ETH.svg"  },
-    { "asset_id": "BTC", "value": 200, "price_usd": 3000.00, "volume_1hrs_usd": 3250, "volume_1day_usd": 2900, "variation": "5.340", "url_icon": "assets/images/ETH.svg"  },
-    { "asset_id": "BTC", "value": 200, "price_usd": 3000.00, "volume_1hrs_usd": 3250, "volume_1day_usd": 2900, "variation": "5.340", "url_icon": "assets/images/ETH.svg"  },
-    { "asset_id": "BTC", "value": 200, "price_usd": 3000.00, "volume_1hrs_usd": 3250, "volume_1day_usd": 2900, "variation": "5.340", "url_icon": "assets/images/ETH.svg"  },
-    { "asset_id": "BTC", "value": 200, "price_usd": 3000.00, "volume_1hrs_usd": 3250, "volume_1day_usd": 2900, "variation": "5.340", "url_icon": "assets/images/ETH.svg"  },
-    { "asset_id": "BTC", "value": 200, "price_usd": 3000.00, "volume_1hrs_usd": 3250, "volume_1day_usd": 2900, "variation": "5.340", "url_icon": "assets/images/ETH.svg"  },
-    { "asset_id": "BTC", "value": 200, "price_usd": 3000.00, "volume_1hrs_usd": 3250, "volume_1day_usd": 2900, "variation": "5.340", "url_icon": "assets/images/ETH.svg"  },
-    { "asset_id": "BTC", "value": 200, "price_usd": 3000.00, "volume_1hrs_usd": 3250, "volume_1day_usd": 2900, "variation": "5.340", "url_icon": "assets/images/ETH.svg"  }
+    {
+      "asset_id": "BTC",
+      "value": 200,
+      "price_usd": 3000,
+      "volume_1hrs_usd": 3250,
+      "volume_1day_usd": 2900,
+      "variation": "5.340",
+      "url_icon": "assets/images/ETH.svg"
+    },
+    {
+      "asset_id": "BTC",
+      "value": 200,
+      "price_usd": 3000,
+      "volume_1hrs_usd": 3250,
+      "volume_1day_usd": 2900,
+      "variation": "5.340",
+      "url_icon": "assets/images/ETH.svg"
+    },
+    {
+      "asset_id": "BTC",
+      "value": 200,
+      "price_usd": 3000,
+      "volume_1hrs_usd": 3250,
+      "volume_1day_usd": 2900,
+      "variation": "5.340",
+      "url_icon": "assets/images/ETH.svg"
+    },
+    {
+      "asset_id": "BTC",
+      "value": 200,
+      "price_usd": 3000,
+      "volume_1hrs_usd": 3250,
+      "volume_1day_usd": 2900,
+      "variation": "5.340",
+      "url_icon": "assets/images/ETH.svg"
+    },
+    {
+      "asset_id": "BTC",
+      "value": 200,
+      "price_usd": 3000,
+      "volume_1hrs_usd": 3250,
+      "volume_1day_usd": 2900,
+      "variation": "5.340",
+      "url_icon": "assets/images/ETH.svg"
+    },
+    {
+      "asset_id": "BTC",
+      "value": 200,
+      "price_usd": 3000,
+      "volume_1hrs_usd": 3250,
+      "volume_1day_usd": 2900,
+      "variation": "5.340",
+      "url_icon": "assets/images/ETH.svg"
+    },
+    {
+      "asset_id": "BTC",
+      "value": 200,
+      "price_usd": 3000,
+      "volume_1hrs_usd": 3250,
+      "volume_1day_usd": 2900,
+      "variation": "5.340",
+      "url_icon": "assets/images/ETH.svg"
+    },
+    {
+      "asset_id": "BTC",
+      "value": 200,
+      "price_usd": 3000,
+      "volume_1hrs_usd": 3250,
+      "volume_1day_usd": 2900,
+      "variation": "5.340",
+      "url_icon": "assets/images/ETH.svg"
+    },
+    {
+      "asset_id": "BTC",
+      "value": 200,
+      "price_usd": 3000,
+      "volume_1hrs_usd": 3250,
+      "volume_1day_usd": 2900,
+      "variation": "5.340",
+      "url_icon": "assets/images/ETH.svg"
+    },
+    {
+      "asset_id": "BTC",
+      "value": 200,
+      "price_usd": 3000,
+      "volume_1hrs_usd": 3250,
+      "volume_1day_usd": 2900,
+      "variation": "5.340",
+      "url_icon": "assets/images/ETH.png"
+    }
   ],
-
   "wallet": [
-    { "user_id": 1,"asset_id": "BTC", "quantity": 200 }
+    {
+      "user_id": 1,
+      "asset_id": "BTC",
+      "name": "Bitcoin",
+      "quantity": 30,
+      "url_icon": "assets/images/BTC.png",
+      "id": 1
+    },
+    {
+      "user_id": 1,
+      "asset_id": "ETH",
+      "name": "Etherium",
+      "quantity": 888,
+      "url_icon": "assets/images/ETH.png",
+      "id": 2
+    },
+    {
+      "user_id": 1,
+      "name": "SOL",
+      "asset_id": "SOL",
+      "quantity": 222,
+      "url_icon": "assets/images/SOL.png",
+      "id": 4
+    },
+    {
+      "user_id": 1,
+      "name": "USD Coin USDC",
+      "asset_id": "USDC",
+      "quantity": 50,
+      "url_icon": "assets/images/USDC.png",
+      "id": 5
+    }
   ]
 }
-
-
-  
